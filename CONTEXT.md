@@ -39,12 +39,17 @@ AE/Owner: Daniel Jenks
 
 ## The Scenario
 
-Channel Partners Solutions is a **31-person professional services firm** in Irvine, CA. They are currently running a **homegrown field service solution** and are growing fast enough that it can no longer keep up. They are evaluating Salesforce Field Service as the replacement.
+Channel Partners Solutions is a **PE-backed retail execution and field services consolidator** in Irvine, CA that has unified 6 acquired companies: Apollo, BDS, WhiteHawk, BTR, MAG, and MaaS. They employ **4,140 W-2 field reps** delivering hybrid services across break-fix, installations, merchandising, audits, and training.
 
-The opportunity name encodes the target footprint:
+They are currently consolidating 3 legacy workforce management systems into "Open Sky" (custom-built platform). **Major rollout scheduled July 6, 2026** across all 6-7 business units, followed by stabilization phase.
+
+The current opportunity is a **pilot/crawl deployment**:
 - **+60 FSL Tech licenses** (field technicians)
 - **+10 FSL Dispatcher licenses**
-- **"Crawl"** = phased/starter deployment
+- **70 total licenses for 4,140 reps = 1.7% coverage**
+- **"Crawl"** = testing with one LOB or region before expansion
+
+**Full deployment potential:** $4M-$5M (all 4,140 reps across FSL + potential Retail Execution hybrid)
 
 ### What SE Is Being Asked To Do
 
@@ -54,19 +59,43 @@ From the DSR (`Reason_for_SE_Involvement__c`):
 SE Next Steps (`SE_Next_Steps__c`):
 > Internal engagement and level setting ahead disco/reverse demo. Prepare demonstration to follow
 
+**Completed:**
+- ✅ June 18, 2026: Reverse demo (2-hour OpenSky walkthrough with Jay, Kari, Mario, Tambra, James)
+- ✅ June 23, 2026: Discovery questions drafted, reverse demo analysis documented
+
+**Upcoming:**
+- June 24, 2026 (9am): Architecture review session
+- Week of July 1-5: Follow-up discovery session
+- July 6, 2026: Open Sky rollout begins (customer resource constrained after this date)
+- Q4 2026: Earliest realistic evaluation window for Salesforce (post-stabilization)
+
 ### Demo Approach
 
-This is a **discovery-first** engagement:
-1. Internal SE level-set on the account (understand the homegrown system, pain points, growth trajectory)
-2. **Reverse demo** — show the customer you understand their world before showing product
-3. Targeted FSL demo — focused on replacing a homegrown solution for a 31-person PS firm
+This is a **discovery-first** engagement with **long sales cycle** (Q4 2026 earliest decision window):
 
-Key themes to hit:
-- FSL vs. homegrown: why purpose-built wins at scale
-- Dispatcher console + scheduling automation (they have dispatchers in scope)
-- Mobile for field techs (60 techs)
-- Reporting/visibility that a homegrown system can't provide
-- "Crawl" path — phased rollout, low risk, fast time to value
+**Phase 1 (June 2026):** Discovery & Reverse Demo ✅
+- Understand Open Sky system, pain points, business model
+- Map workforce structure (4,140 reps across 6 business units)
+- Identify gaps Open Sky can't address
+
+**Phase 2 (July-Sept 2026):** Architecture & Relationship Maintenance
+- Architecture review (June 24)
+- Monitor Open Sky rollout progress
+- Position Salesforce as enhancement/complement (not replacement)
+- Share relevant content (AI scheduling case studies, reference architectures)
+
+**Phase 3 (Q4 2026):** Formal Evaluation
+- Solution architecture and design sessions
+- Proof of concept / pilot planning
+- Commercial proposal (crawl → walk → run expansion path)
+
+**Key Themes:**
+- **Intelligent scheduling** (AI-driven, cross-LOB optimization) — their #1 need
+- **Real-time data & exception handling** (4-hour batch → streaming CDC)
+- **Cross-LOB resource optimization** (break silos between merch/break-fix/installations)
+- **Mobile stability & UX** (offline-first, consistent across devices)
+- **FSL + Retail Execution hybrid** (break-fix on FSL, merchandising on Rex)
+- **Crawl → Walk → Run** (70 licenses → 500-1000 → 4,140 full deployment)
 
 ---
 

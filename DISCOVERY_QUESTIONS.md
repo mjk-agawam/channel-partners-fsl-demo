@@ -12,7 +12,10 @@
 **What we learned:**
 - OpenSky is a homegrown field service system supporting merchandising, break/fix, installations, and dedicated brand teams
 - Mix of hard scheduling (manager-assigned) and self-scheduling (rep drags to calendar)
-- 31-person company managing thousands of field reps across retailers (Target, Best Buy, LG, Samsung, etc.)
+- **PE-backed consolidator:** Unified 6 acquired companies (Apollo, BDS, WhiteHawk, BTR, MAG, MaaS)
+- **4,140 W-2 field reps** across all business units (not 31 — that's corporate staff)
+- **Current opportunity:** $73.5K crawl (70 licenses = 1.7% coverage)
+- **Full deployment potential:** $4M-$5M (all 4,140 reps on FSL + potential Retail Execution hybrid)
 - Rolling out OpenSky across 6-7 business units in July
 - Key pain points: intelligent scheduling, mobile stability, cross-LOB optimization, real-time exception reporting
 - Tech stack: OpenSky, ADP (payroll), Business Central (finance), third-party LMS, warehouse integration
