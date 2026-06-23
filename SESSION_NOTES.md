@@ -62,3 +62,75 @@ The Slack MCP went into error state during this session. Root cause: running `~/
 | `org62-access.mdc` | `~/.cursor/rules/` | Cursor rule: org62 auth approach |
 | `CONTEXT.md` | this repo root | Deal context and demo scenario |
 | `SESSION_NOTES.md` | this repo root | This file |
+
+---
+
+# Session Notes — 2026-06-23
+
+## What Was Done
+
+### 1. Reverse Demo Transcript Processed
+- Received full transcript from June 18, 2026 OpenSky reverse demo (2-hour session)
+- Extracted key insights, pain points, workflows, and technical architecture
+- Created comprehensive summary document: `REVERSE_DEMO_TRANSCRIPT.md`
+
+### 2. Discovery Questions Drafted
+- Built tailored discovery questions for June 24 meeting
+- Questions build on what was learned in reverse demo (not re-asking basics)
+- Focus areas: intelligent scheduling, reactive breaks, cross-LOB work, mobile stability, break/fix automation, real-time data
+- File: `DISCOVERY_QUESTIONS.md`
+
+### 3. Key Insights from Reverse Demo
+
+**Top Pain Points ("Magic Wand" Responses):**
+- Jay: Intelligent scheduling, field efficiency, real-time exception reporting
+- Kari: Mobile app consistency across devices
+- Mario: Smarter reactive scheduling (sick reps, job runs long)
+- Tambra: Better rep mobile dashboard
+- James: Lower-latency data with delta/CDC
+
+**OpenSky System Overview:**
+- Homegrown platform, merging two company systems (one self-scheduling, one hard-scheduling)
+- Supports merchandising, break/fix, installations, dedicated brand teams
+- Mix of hard scheduling (manager-assigned) and self-scheduling (rep drags to calendar)
+- Overnight route optimization for self-scheduled work only
+- Multi-rep team scheduling (5-15 people, same store) is manual and painful
+- Offline-first mobile app (iOS/Android)
+- 4-hour batch to data warehouse → Tableau/PowerBI
+
+**Major Gaps:**
+- Hard scheduling has no route optimization (inefficient routes, excess mileage reimbursement)
+- No intelligent/AI-driven scheduling
+- Silos by line of business (no cross-LOB work, no incentive for merch rep to handle break/fix issue in same visit)
+- No real-time rep location visibility
+- Reactive scheduling is manual (bulk reschedule tool)
+- Mobile stability issues across devices
+- No historical context for reps (prior visits, defects, contacts)
+- Go-backs are manual (defect found → export → manually create new assignment)
+- No real-time exception reporting (overtime risk, SLA breach, schedule adherence)
+
+**Timeline Context:**
+- July 6, 2026: Major OpenSky rollout across 6-7 business units
+- Post-rollout: "Massive stabilization effort" with resource constraints
+- Org structure changing (LOB silos → geographic model) in next 2-3 months
+- Architecture workshop: June 24, 9am
+- Follow-up session: Week of July 1-5
+
+---
+
+## Next Steps
+
+1. **June 24 Discovery Meeting** — use `DISCOVERY_QUESTIONS.md` to probe scheduling, cross-LOB, mobile, break/fix, real-time data
+2. **June 24 Architecture Session (9am)** — integrations deep dive
+3. **Week of July 1-5** — follow-up demo with targeted areas
+4. **Post-July 6** — limited bandwidth due to OpenSky rollout stabilization
+5. **Demo scoping** — after discovery, decide which FSL components to build in `mjk-260320-scheduler` org
+
+---
+
+## Key Files Created This Session
+
+| File | Location | Purpose |
+|------|----------|---------|
+| `REVERSE_DEMO_TRANSCRIPT.md` | this repo root | Full summary of June 18 OpenSky demo |
+| `DISCOVERY_QUESTIONS.md` | this repo root | Tailored questions for June 24 meeting |
