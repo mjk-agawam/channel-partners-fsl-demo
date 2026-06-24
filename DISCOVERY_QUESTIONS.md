@@ -106,6 +106,14 @@ OPEN SKY PLATFORM
 **Warehouse Management System (WMS):**
 - Data flows: Shipping requests (OpenSky → WMS), tracking data (WMS → OpenSky)
 - Pain point: Partner warehouse data is manual (spreadsheet upload)
+- **ANSWERED:**
+  - ✅ **WMS integration:** "OS Integration with a WMS system for all shipping. WMS is then integrated with the shipping providers for rates and service. The integration provides inventory on all parts/products in the warehouse to OS users creating shipments"
+  - ✅ **Shipping Module:** "Module to enable users to create shipping requests that go into a queue for the team/warehouse to manage. Requests go through statuses until they are approved by the warehouse and flow (through an integration) into the Warehouse Management System (WMS) for processing"
+  - ✅ **Warehouse Queue:** "Warehouse request queue where warehouse can edit/move requests into the WMS for processing"
+  - ✅ **One-off vs Bulk shipments:** Simple (one person, 1-many products) vs Complex (many people, multiple products, linked to project/call form + job costing)
+  - ✅ **Parts Management:** "Module to add/edit parts from all CP partners. Users can add manually or upload a list with the required attributes"
+  - ✅ **CP warehouse integration:** If parts shipped from CP Warehouse, WMS integrated to provide shipping info after completion
+  - ✅ **Partner warehouse workaround:** Manual upload of shipping details where fulfillment partner is not CP warehouse
 - **Questions:**
   - Which WMS vendor? (Kari wouldn't name it in demo — can you now?)
   - How many warehouses? (CP's 60K sq ft facility + partner warehouses?)
@@ -117,8 +125,12 @@ OPEN SKY PLATFORM
 **LMS (Learning Management System):**
 - Data flows: Users/teams (OpenSky → LMS), course completions (LMS → OpenSky)
 - Enforcement: Required courses block reps from starting work
+- **ANSWERED:**
+  - ✅ **LMS vendor:** LearnUpon
+  - ✅ **Two-way integration:** OpenSky sends users/teams to LMS, LMS sends course completions back
+  - ✅ **Training validation:** Field reps are not able to schedule or begin work until they have completed their required work in the LMS system
+  - ✅ **Resources/training content:** On-the-fly training content stored in cloud and linked within OpenSky as resources (not full LMS courses), accessible via mobile app Resources section
 - **Questions:**
-  - Which LMS vendor?
   - How well does the two-way feed work? (Data quality, sync frequency, error handling?)
   - Do reps actually complete required courses before going on-site, or do they skip?
   - Is training content contextual (tied to specific projects/stores), or just a library?
@@ -127,6 +139,11 @@ OPEN SKY PLATFORM
 **Travel Platform (Agency):**
 - Data flows: Travel requests (OpenSky → Agency), bookings/itineraries (Agency → OpenSky)
 - Pain point: "Insane" travel spend, frequent last-minute changes
+- **ANSWERED:**
+  - ✅ **Travel Management workflow:** "Travel request process for travel team who books travel. Travel request form which is approved by manager. Travel team has queue for approved travel requests and can book travel and put in details back to manager"
+  - ✅ **Travel Estimator:** "Break Fix module allowing Field Managers to create an itinerary for travel for a rep and an approval process."
+  - ✅ **Travel Hours tracked:** "Call forms specifically for travel - Airline, Rental Car, Hotel"
+  - ✅ **Rep availability:** "Ability for a rep to designate what time they have available per day to work. This is used by the team to schedule reps according to their set availability when projects are schedule for them. This is especially useful for 2 or 3 person projects where a team needs to go in to do work together."
 - **Questions:**
   - Which travel platform vendor?
   - How often do travel plans change after booking? (Cost of change fees?)
@@ -134,6 +151,7 @@ OPEN SKY PLATFORM
   - Do reps see their travel itinerary in OpenSky mobile app?
   - Could better local scheduling reduce travel spend? (What % is avoidable?)
   - If we integrated travel data into Salesforce, what would that enable? (Proactive alerts, cost optimization, calendar integration?)
+  - Travel Estimator vs Travel Management - are these the same workflow or two different processes?
 
 **Data Warehouse + BI:**
 - Data flows: OpenSky → data warehouse (4x/day ETL), warehouse → Tableau/PowerBI
@@ -157,22 +175,37 @@ OPEN SKY PLATFORM
 **CRM (Sales):**
 - Current state: Separate from OpenSky (no integration except job costing)
 - Gap: No lead → project → field execution → upsell closed loop
+- **ANSWERED:**
+  - ✅ **Contact Management (SRM):** "Questions that can be asked per contact during a visit. Current answers for each contact is brought back on each visit."
+  - ✅ **Contact associations:** "Ability to enter contacts by location visited, including detailed contact card. After creating a contact can that contact be connected through meta data to a store location, a reps position in the system, the retail chains position hierarchy"
+  - ✅ **Bulk contact upload:** "Ability to upload a list of contacts and associate to stores or positions"
+  - ✅ **Field rep contact access:** "Field rep access on a mobile device to contacts they have created. This includes all meta data and the answering of contact questions during store visits"
 - **Questions:**
   - Do you have a CRM today? (Salesforce Sales Cloud? HubSpot? Zoho? Spreadsheets?)
   - Why is CRM separate from workforce management? (Different buyers? Different systems? Legacy from acquisitions?)
   - Do sales reps ever go into the field with service reps? (Joint calls, upsells, relationship building?)
   - If we unified CRM + FSL, what would that enable? (Lead to cash workflow, upsell opportunities from field, client 360 view?)
+  - The SRM Contact Management - is this for store contacts (retail staff) or for client contacts (LG, Samsung decision makers)?
 
 ### Future State Requirements
 
 **Real-Time Data Streaming:**
 - James: "When we last spoke, this is where we were at. Please give us a delta."
 - Use cases mentioned: Overtime alerts, SLA breach warnings, exception reporting, project profitability
+- **ANSWERED:**
+  - ✅ **Current reporting capabilities:**
+    - **Question Alerts:** "User created alerts linked to call form questions messaging a person or group to something that needs to be followed up"
+    - **GeoTracking Dashboard:** "Reporting or dashboarding providing feedback about the location of reps and whether check in/out was done correctly on call forms"
+    - **Payroll Reporting:** "Reporting used to find issues and export data regarding payroll (hours, mileage, drive time, etc.)"
+    - **Image Gallery:** "Ability to filter/view/export/provide access to images collected on call forms"
+    - **Target PML Email:** "Custom email send to Target internal store staff after each execution visit to one of their stores"
+  - ✅ **Reporting platforms:** Tableau (client portals, custom reports sourced from Snowflake), SSRS (offline reports in OS for self-service)
 - **Questions:**
   - Beyond the 4 use cases above, what else needs real-time data?
   - What's the acceptable latency? (Seconds? Minutes? Sub-hour?)
   - Who consumes this data? (Managers? Reps? Clients? Executives?)
   - Would you build event-driven workflows if data was real-time? (Auto-reassign work when rep checks out late, auto-escalate if SLA at risk, auto-alert manager if rep hits 38 hours mid-week?)
+  - Question Alerts - are these working today, or a planned feature? Are they real-time or batch?
 
 **Cross-LOB Workflow Automation:**
 - Jay: "A merch goes to a target, sees one of the install broken or a display broken. There is not even an incentive for the person to capture that and send it."
@@ -251,21 +284,33 @@ OPEN SKY PLATFORM
 
 **Kari: "The manager goes in and they're looking at the store bucket and they're loading those stores, it doesn't prompt them that they're making a mistake because they should be grouping these together."**
 
+- **ANSWERED:**
+  - ✅ **Routing optimization exists:** "Ability for teams to load in store visits and the system supply routing for the field reps assigned to minimize mileage and drive time"
+  - ✅ **Rep can optimize their own route:** "Enable reps to turn on or run themselves an optimization for the appointments on their calendar to reduce drive time and mileage and improve efficiency"
+  - ✅ **Nightly optimization:** Self-scheduled work gets optimized overnight (mentioned in reverse demo)
+  - ✅ **Gap for hard scheduling:** Hard-scheduled (manager-assigned) work does NOT get optimized - manual process today
+  - ✅ **High-volume scenario:** "Field reps may do greater than 25 visits in a day during busy seasons. For optimization engines this has caused issues with our partners optimization routines"
 - **Questions:**
   - For hard scheduling (multi-rep teams), what does "optimal" look like? (Minimize total travel? Balance workload across team? Ensure all skills are covered? Minimize project duration?)
   - Can you quantify the inefficiency today? (e.g., "10% of travel spend is avoidable if we had better route optimization"?)
   - Do you track "what should have happened" vs. "what actually happened"? (Missed consolidation opportunities, inefficient routes, wrong rep assigned?)
   - If Einstein could suggest improvements in real-time, who would see it? (Manager building the schedule? Dispatcher mid-day? Rep self-scheduling?)
+  - Which optimization partner are you using today? What are the limitations causing issues with 25+ visits/day?
 
 ### Multi-Rep Team Scheduling
 
 **Kari: "How do you schedule single projects and how do you schedule multiple teams when you need maybe five to 15 people at the store on the same day at the same time?"**
 
+- **ANSWERED:**
+  - ✅ **Multi Rep Scheduling capability:** "Ability to upload locations that need multiple field reps to perform the work at the same time. For example we need 2 reps to work at the same date/time because a display is too heavy for one rep to perform the work. At it's simplest allows for a schedule upload with the reps associated. At it's best the system find the reps and find the ideal scheduling for those reps"
+  - ✅ **Current state:** At simplest = schedule upload with reps pre-assigned. At best = system finds and schedules ideal reps (aspirational, not current state)
+  - ✅ **Rep availability tracking:** "Ability for a rep to designate what time they have available per day to work. This is used by the team to schedule reps according to their set availability when projects are schedule for them. This is especially useful for 2 or 3 person projects where a team needs to go in to do work together."
 - **Questions:**
   - What makes team scheduling hardest? (Finding 15 people with the right skills all available the same 3 days? Minimizing travel cost for people flying in from multiple regions? Ensuring crew lead is available?)
   - Do teams have fixed compositions, or does it change per project? (Same 10 people always work together? Or dynamically assembled based on availability?)
   - What happens when one team member cancels last-minute? (Scramble for replacement? Shrink the team? Delay the project?)
   - Could Einstein optimize team assembly? (Suggest the best 10 people based on skills, availability, location, cost, historical performance?)
+  - The "at it's best the system find the reps" - is this built today or a future requirement?
 
 ### Cross-LOB Optimization
 
@@ -295,9 +340,13 @@ OPEN SKY PLATFORM
 
 ### Offline Requirements
 
+- **ANSWERED:**
+  - ✅ **Offline capability:** Ability to work offline during a visit and sync calendar/call form/messages when a connection is available
+  - ✅ **Retail environment:** "Retail locations can have very spotty coverage at time deep into the large box stores" (from feature list)
+  - ✅ **Partial save/pause:** Ability to pause call form entry and save questions already answered, then return where they left off
+  - ✅ **Data available offline:** Schedule, survey questions, contacts, messages, resources (files/videos), materials tracking
 - **Questions:**
   - How long are reps typically offline? (Entire shift? Just in-store? Intermittent connectivity?)
-  - What data must be available offline? (Schedule, survey questions, contact info, photos from prior visits, training videos, parts inventory?)
   - How much data do reps sync daily? (MB? GB? Varies by LOB?)
   - What happens if sync fails? (Rep's work is lost? Queued for retry? Manual intervention required?)
   - Do reps ever work multi-day projects with no connectivity? (Rural areas, construction sites, overnight travel?)
@@ -306,12 +355,20 @@ OPEN SKY PLATFORM
 
 **Tambra: "A better rep mobile dashboard" (Context: Calendar-first view doesn't provide enough guidance)**
 
+- **ANSWERED:**
+  - ✅ **Current rep dashboard:** "Mobile dashboard providing field reps a summary of work to be completed with links to start the work broken down by type of work. Access and links to messages from their team, their profile, stores assigned to them etc."
+  - ✅ **Work list:** "List of work assigned/available for the field rep to schedule or start entering"
+  - ✅ **Last visit preview:** "Access during the call form entry flow to the previous entered call form questions for a specific store and call form. Used to familiarize them on what happened during the previous visit."
+  - ✅ **Prioritization:** "Ability for a rep to have work presented to them prioritized list to schedule"
+  - ✅ **Materials tracking visible:** "Want to see tracking number, link to tracking, date of delivery, status, was it delivered to the rep assigned"
+  - ✅ **Mobile UI redesign:** "New Work order view that is responsive and allows field reps to access the work orders from a mobile browser without needed an app. The mobile UI is designed with task completion in mind and was made to enable a rep an easy to use interaction with upwards of hundreds of tasks in a single work order which is common among construction remodel projects."
 - **Questions:**
   - What do reps need to see first thing in the morning? (Today's schedule? Alerts/messages? Required actions before first visit? Travel itinerary?)
   - Should the dashboard be different per LOB? (Break-fix reps see open tickets, merch reps see consolidation opportunities, construction reps see team roster?)
   - What guidance do reps need? ("Visit Store A before Store B to optimize route"? "Part for this job shipped, expected delivery Tuesday"? "Required training expires in 3 days"?)
   - Would Einstein Next Best Action help? ("Based on your location and skills, we recommend picking up Job XYZ on your way home"?)
   - Do reps ever proactively look for extra work to fill gaps? (Gig-style: "I have 2 hours free this afternoon, are there any jobs nearby?")
+  - The new responsive Mobile UI - is this replacing the native iOS/Android apps, or complementing them?
 
 ---
 
@@ -342,12 +399,19 @@ OPEN SKY PLATFORM
 
 ### Overtime Prevention
 
+- **ANSWERED:**
+  - ✅ **Payroll types tracked:** In Store Hours, Admin Hours, Drive Time Hours, Mileage, Course Hours, Additional Pay $, Travel Hours, Meal Break Time
+  - ✅ **Payroll management:** "Regular and expense payroll approval by Managers. Approved payroll then becomes available to the HR/Payroll Department to run the 'payroll processing' action, that becomes the file uploaded to ADP."
+  - ✅ **Payroll verification:** "Mechanism for managers to verify payroll hours before posting to Payroll"
+  - ✅ **Rep can view/edit payroll:** "Ability for field reps on their mobile app to view and edit all of their payroll related time, mileage, drive time"
+  - ✅ **End of day questionnaire:** "Questionnaire asking if the field rep was compensated for all of their pay for the day"
 - **Questions:**
   - You mentioned overtime is calculated after-the-fact. What's the business impact? (Labor cost overruns? Compliance issues? Budget surprises?)
   - If you could see a rep approaching 40 hours mid-week, what would you do? (Stop assigning new work? Reassign to another rep? Get manager approval to go over?)
   - Do reps game the system? (Slow down to hit overtime? Rush to finish before 40 hours?)
   - Would you want proactive alerts? ("Rep A is at 38 hours Tuesday morning — 3 more jobs scheduled this week will put them at 46 hours total.")
   - Could Einstein predict who's likely to hit overtime based on historical job durations? ("This rep takes 20% longer than average on LG installs, so they'll hit 42 hours if you assign them 3 more this week.")
+  - Does the payroll verification process catch overtime issues before they hit ADP, or only after?
 
 ---
 
@@ -399,6 +463,11 @@ OPEN SKY PLATFORM
 
 **Jay: "Real time exception reporting minimize the gobacks."**
 
+- **ANSWERED:**
+  - ✅ **Call Form Quality Assurance:** "Client service tool to flag particular answers to questions as needing follow up, creates revisits for the reps to complete"
+  - ✅ **Deficiency Reporting:** "Itemized issue tracking by scope of work. Issues that are reported by the reps are trackable items with their own statuses and data fields including any resolutions, follow-up, go back dates and shipment tracking info associated with that issue."
+  - ✅ **Work Order Scopes:** "Scopes serve as a container for all associated photos and documents as well as issues reported. Scopes are statused and trackable"
+  - ✅ **Parts/Issue Resolution tracking:** Field reps can provide updates/feedback about all Part Issues/Orders for the location, see active part orders requiring status and completion photos
 - **Questions:**
   - How many go-backs per week? (Across all 4,140 reps? By LOB?)
   - What causes go-backs? (Wrong parts? Incomplete work? Rep didn't have right skills? Store wasn't ready? Instructions unclear?)
@@ -406,6 +475,7 @@ OPEN SKY PLATFORM
   - Do you track go-back root causes? (Categorize by reason? Track trends over time?)
   - If AI could predict "this job is likely to require a go-back based on incomplete survey responses," would that help? (Alert manager before rep leaves site?)
   - Could Einstein detect patterns? ("Rep C has 3x higher go-back rate on Samsung installs — recommend additional training?")
+  - How does the Call Form QA process work? Manual review or automated flagging based on answer patterns?
 
 ---
 
@@ -496,6 +566,12 @@ OPEN SKY PLATFORM
     - Cannot capture customer footage (legal constraints)
     - Photo capture limited to products/fixtures/compliance (not people)
   - ✅ **FSL demo implication:** No wearables or AR demo components for retail use cases
+  - ✅ **Other platform features identified:**
+    - **Localization:** "Ability for the system to support other languages and localization (time zone, etc)."
+    - **Territory Mapping:** "Ability for Account Teams to draw territories on a map for a rep, supervisor and use that geopoint data to assign stores for projects and do reporting"
+    - **Single Sign On:** "Users can login using their Active Directory single sign instead of username and password"
+    - **Blackout days:** "Ability to set by chain what days reps cannot schedule for"
+    - **Rain payday advancement integration:** "Integration with RAIN payday advance for reps to get paid prior to pay day"
 - **Questions:**
   - Are you evaluating ServiceMax, FieldAware, FieldOne, or other workforce management platforms?
   - Did you evaluate any platforms before deciding to build OpenSky? (What did you rule out and why?)
