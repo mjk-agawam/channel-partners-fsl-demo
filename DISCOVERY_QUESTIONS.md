@@ -322,6 +322,42 @@ If these 5 themes are solved:
 - Einstein Vision for image recognition (analyze before/after photos, auto-flag quality issues, real-time feedback in FSL Mobile)
 - AI QC ROI: $13.2M/year ($240K manual QA savings + $13M quality go-back reduction)
 
+### Construction Group: Third-Party Contractor Model
+**ANSWERED:**
+- ✅ **Scope:** Building out entire store sections (flooring, tables, TVs) rather than routine maintenance
+- ✅ **Labor model:** Third-party contractors paid via invoice (NOT W-2 employees)
+- ✅ **Workflow:** Contractors use link-based call form entry (no OpenSky login, no mobile app access)
+- ✅ **System limitation:** Construction managed in Project Center (NOT OpenSky) because OpenSky lacks mechanisms to track subcontractors
+- ✅ **Integration goal:** Eventually integrate construction LOB into OpenSky (no immediate mechanism exists)
+
+**Salesforce Opportunity:**
+- Service Resource Types (Employee W-2, Contractor 1099, Partner third-party)
+- Experience Cloud for contractor portal (Community license, mobile-responsive, limited access)
+- Unified scheduling (same Work Order object for W-2 + contractors, Skills-Based Routing across resource types)
+- Mixed team projects (Crew scheduling with different resource types on one project)
+
+### Implementation Strategy
+**ANSWERED:**
+- ✅ **Deployment approach:** Team-by-team rollout (NOT "flip the switch"), established successful method, add functionality as gaps filled
+- ✅ **Implementation oversight:** Hybrid model (Salesforce architecture + accountability, Partner execution + industry expertise)
+- ✅ **Headcount planning:** Model future state capacity (NOT current siloed LOB headcount), account for cross-training and efficiency gains
+- ✅ **Change management:** Success depends on people adopting processes (not just technology), leadership commitment to single consolidated process essential
+- ✅ **Next steps:** Reverse demos, field ride-alongs (Irvine and Dallas), refine value story (technical features → business KPIs → quantified ROI), establish directional cost range
+
+**Phased Rollout Plan:**
+- Phase 1 (Months 1-3): Pilot single LOB, ~100 reps, core FSL functionality
+- Phase 2 (Months 4-6): Expand to break-fix, +200 reps, add Freshdesk integration, Einstein Vision QC, client portal
+- Phase 3 (Months 7-12): Scale to remaining LOBs, +1,000 reps, multi-project scheduling, travel integration, CPQ, Einstein Bot
+- Phase 4 (Months 13-18): Full rollout +2,840 reps, construction contractors, RMS integration, Mars integration, decommission OpenSky
+
+**Directional Cost Estimate (3-Year TCO):**
+- Licenses: $7.65M/year × 3 years = $22.95M
+- Implementation (Year 1): $3.2M
+- Ongoing (Years 2-3): $200K
+- **Total: $26.35M over 3 years**
+- **ROI: 18:1** (annual benefit $142M vs annual cost $7.75M, payback 2 months)
+- CRITICAL: Needs validation with actual data
+
 ---
 
 ## Today's Focus: Architecture, Integration, Positioning
