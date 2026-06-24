@@ -222,6 +222,82 @@ If these 5 themes are solved:
 - 20% overtime reduction = **$8M/year cost savings** (4,140 reps × $50k avg × 10% OT × 20% reduction)
 - 30-day acquisition onboarding = faster PE rollup execution = higher exit multiple
 
+### Billing: 7/10 (Highest Rated So Far)
+**What's Working:**
+- Generally functional process (bills generated, payments processed, Business Central ERP handles invoicing)
+
+**Root Causes of Gaps:**
+- Client-specific project setups not optimal for billing structure (billing tied to work completion, custom setups don't align with milestones, manual reconciliation required)
+- Major client payment delays (Microsoft requires security audits before payment, can take weeks/months, causes cash flow issues)
+
+**Salesforce Opportunity:** Invoice Management with custom statuses, Flow Automation for aging alerts, Experience Cloud client portal for audit upload/payment release, Slack integration for real-time updates
+
+### KPI and Trust Issues: FOUNDATIONAL CROSS-FUNCTIONAL BLOCKER
+**Root Cause:**
+- Lack of trust in data persists across departments
+- Financial vs. operational reports show discrepancies (Finance pulls from Business Central with OT multipliers, Operations pulls from OpenSky raw time entries)
+- Different teams use different definitions (4 different "completion dates" for same project)
+- No single source of truth (OpenSky, Business Central, Snowflake, spreadsheets all have overlapping project data)
+
+**Impact:**
+- Leadership debates data validity instead of making decisions
+- "I don't trust this report" becomes default response
+- Decisions delayed weeks while teams reconcile conflicting reports
+- Scope creep (no single KPI definition to measure against)
+
+**Example:**
+- CEO asks break/fix margin: Finance says 15%, Operations says 8% (unbilled go-backs), CTO says 5% (scheduling inefficiency adds 10% drive time)
+- CEO: "Which number do I use for board presentation?"
+
+**Salesforce Opportunity:** Single source of truth (Work Order = project across sales/ops/finance), calculated fields for standardized KPI definitions (margin formula same everywhere), Einstein Analytics dashboards (same KPI dashboard for CEO/CFO/CTO/LOB managers with drill-down)
+
+### Data Intelligence and Client Reporting: COMPETITIVE DISADVANTAGE
+**Current State:**
+- Sending clients basic spreadsheets (CSV exports, static PDFs, Excel files)
+- Reports delivered days/weeks after work completed
+- No self-service, no drill-down, no real-time visibility
+
+**Desired State:**
+- Interactive real-time data visualization and analytics
+- Actionable insights enabling immediate issue resolution (not weeks later)
+- Client portal with filters, drill-down, alerts, mobile access
+
+**Competitive Context:**
+- Major clients (Samsung, LG, Microsoft) have vendor options
+- "Spreadsheet 3 days later" not competitive in 2026
+- Risk losing deals/renewals to competitors with better client portals
+
+**Salesforce Opportunity:** Experience Cloud client portals (real-time dashboard with map view, photos, interactive analytics, issue escalation, alerts), Samsung-branded portal differentiates from competitors sending spreadsheets
+
+### "Go-Back" Analysis: OPERATIONAL INEFFICIENCY DRIVER
+**Definition:** Visits required to complete unfinished work (rep must return to store)
+
+**Cost Impact:**
+- 2x labor, 2x mileage, client dissatisfaction, rep frustration
+
+**4 Primary Root Causes:**
+
+**1. Material Logistics (30-40% of go-backs):**
+- Parts don't arrive before scheduled visit (shipping delays, lost/misplaced by retailer, tracking not real-time)
+- Salesforce Opportunity: Real-time parts tracking, mobile alerts before rep leaves, store notifications, predictive Einstein alerts for delay-prone routes
+
+**2. Scheduling Failures (20-30% of go-backs):**
+- Planning visits too late, parts ordered late, visit scheduled before parts can arrive
+- Salesforce Opportunity: Scheduling constraints (can't schedule until parts delivered), automated alerts (if parts not ordered 7 days before target), project templates with standard timelines
+
+**3. Capacity Planning (10-20% of go-backs):**
+- Rep overbooked across multiple projects, projects get rushed, parts not ready
+- Salesforce Opportunity: Multi-Work Order visibility, capacity-based scheduling, Einstein resource optimization
+
+**4. Field Protocol (10-20% of go-backs):**
+- Reps rely on system tracking, don't verify parts with store before arrival, parts at store but not found
+- Salesforce Opportunity: Pre-arrival checklist, store contact integration (tap to call), photo verification, required "Parts Verified" field before check-in
+
+**Go-Back Reduction ROI (Needs Validation):**
+- Assumptions: 25.9M visits/year, 10% go-back rate = 2.6M go-backs/year, $100 avg cost = $260M/year
+- 50% reduction = 1.3M fewer go-backs = **$130M/year savings**
+- Critical: Validate actual go-back rate, cost per go-back, % by root cause
+
 ---
 
 ## Today's Focus: Architecture, Integration, Positioning
