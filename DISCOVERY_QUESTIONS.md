@@ -30,6 +30,10 @@
 4. **Tambra (PM):** Better mobile dashboard (calendar-first doesn't guide daily work)
 5. **James (Data Director):** Real-time delta data extraction (not 4-hour batch)
 
+**Business Performance Assessment (Stephen's Exercise):**
+- **Marketing effectiveness:** 3/10 (rated low due to resource optimization issues, not marketing team failure)
+- **Root causes:** Lead generation misses (capacity constraints), unbalanced resource ratio (full-time vs. part-time vs. floater), over-reliance on "part-timers" as generic bucket (no distinction between reliable retained part-timers and gig workers), lack of cross-training (tactics locked to specific skills, can't optimize availability)
+
 ---
 
 ## Today's Focus: Architecture, Integration, Positioning
