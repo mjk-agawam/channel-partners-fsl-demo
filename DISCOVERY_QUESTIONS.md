@@ -1,7 +1,5 @@
-# Field Service Discovery Questions — Channel Partners Solutions
+
 **Date:** June 24, 2026  
-**SE:** Mike Knight  
-**AE:** Daniel Jenks  
 **Account:** Channel Partners Solutions, LLC  
 **Context:** Architecture session following June 18 OpenSky reverse demo. Focus on gaps, integration points, and Salesforce positioning.
 
@@ -47,6 +45,37 @@
 
 ## 1. Integration Architecture Deep Dive
 
+### Integration Map Overview
+
+**ANSWERED - Full Integration Architecture:**
+
+```
+iCIMS (recruiting/onboarding)
+  ↓
+GAMS (payroll aggregation + unique enterprise ID)
+  ↓
+ADP (payroll processing)
+  ↓
+AWS (middleware: step functions + microservices)
+  ↓
+OPEN SKY PLATFORM
+  ↓
+  ├→ Business Central (ERP: job costing, invoicing)
+  ├→ LearnUpon LMS (certifications, training)
+  ├→ WMS (warehouse: pick/pack/ship)
+  ├→ Agency (travel booking: flights/hotels)
+  ├→ Snowflake (data warehouse: ETL 4x/day)
+  └→ Client APIs (Samsung, LG: file/API feeds)
+       ↓
+    Tableau (client portals + internal BI)
+```
+
+**Data Flow Details:**
+- ✅ **Employee lifecycle:** iCIMS → GAMS (unique ID assignment) → ADP → AWS → OpenSky
+- ✅ **Snowflake sources:** OpenSky operational data + client POS data + ADP HR reports + third-party site data (geospatial, demographics, retail traffic)
+- ✅ **Client data sharing:** File extracts (CSV), legacy API gateways, modern APIs (migration in progress)
+- ✅ **Reporting:** Tableau (client portals, limited access due to licensing), PowerBI (internal ops)
+
 ### Current State Mapping
 
 **Business Central (ERP/Finance):**
@@ -65,12 +94,14 @@
 - Data flows: Time cards, expenses, mileage, drive time
 - Middleware: "Payroll processing app" (mentioned in demo)
 - Pain point: Overtime calculated after-the-fact (can't prevent overages proactively)
+- **ANSWERED:**
+  - ✅ **Employee master data flow:** iCIMS (recruiting/onboarding) → GAMS (payroll aggregation + unique enterprise ID) → ADP (payroll processing) → AWS step functions/microservices → OpenSky (profiles, teams, hierarchies)
+  - ✅ **GAMS purpose:** Custom middleware that assigns enterprise-wide unique ID (solves cross-country ADP file number conflicts) and aggregates payroll data (overtime + regional calculations) before ADP export
+  - ✅ **Time card flow:** OpenSky → GAMS → ADP (for payroll processing)
 - **Questions:**
-  - What's the payroll processing app? (Custom, third-party?)
-  - Why does overtime calculation happen outside OpenSky? (Multi-LOB time aggregation?)
   - What's the payroll error rate? (Disputed time entries, missing expenses, incorrect mileage?)
   - How often do reps call support about payroll issues?
-  - Could Salesforce replace the payroll processing app, or just feed it better data?
+  - Could Salesforce replace GAMS, or just feed it better data?
 
 **Warehouse Management System (WMS):**
 - Data flows: Shipping requests (OpenSky → WMS), tracking data (WMS → OpenSky)
@@ -105,12 +136,20 @@
   - If we integrated travel data into Salesforce, what would that enable? (Proactive alerts, cost optimization, calendar integration?)
 
 **Data Warehouse + BI:**
-- Data flows: OpenSky → data warehouse (4-hour batch), warehouse → Tableau/PowerBI
+- Data flows: OpenSky → data warehouse (4x/day ETL), warehouse → Tableau/PowerBI
 - Pain point: James wants real-time delta/CDC, not batch extracts
+- **ANSWERED:**
+  - ✅ **Platform:** Snowflake
+  - ✅ **ETL frequency:** 4 times per day (6-hour intervals on average, not 4-hour)
+  - ✅ **Snowflake data sources beyond OpenSky:**
+    1. Client POS data (via client API integrations - Samsung, LG, etc.)
+    2. ADP HR reports (payroll/personnel data)
+    3. Third-party site data: geospatial, demographics, retail traffic (e.g., Best Buy foot traffic)
+  - ✅ **Tableau usage:** Client portals (company-controlled data models), limited user access (licensing costs), clients can pay for raw data access for self-service analytics
+  - ✅ **PowerBI usage:** Internal operations dashboards, same Snowflake source (4x/day)
+  - ✅ **Data ownership:** Company prefers internal retention ("authoritative intelligence"), but major clients (Samsung, LG) require direct access
 - **Questions:**
-  - What data warehouse platform? (Snowflake, Redshift, BigQuery, on-prem?)
   - What's the batch extract process? (API date range query, bulk export, ETL tool?)
-  - Why 4-hour frequency? (Performance, complexity, business requirement?)
   - What decisions need real-time data that you can't make today? (Overtime alerts, SLA breach warnings, project profitability, schedule adherence?)
   - If we provided MuleSoft + Salesforce Platform Events (streaming CDC), what would you build first?
   - Who owns the Tableau/PowerBI dashboards? (James's team? LOB managers build their own?)
@@ -318,6 +357,17 @@
 
 **Kari: "We create very detailed surveys. When I say detailed, I mean lots of questions, lots of functionality... tons of conditionality."**
 
+- **ANSWERED:**
+  - ✅ **Survey scale:** 600-1,200 questions per survey (potential), though individual visits typically involve fewer
+  - ✅ **Survey structure:** Subdivided into "tasks" for mobile app stability/performance (field reps navigate specific sections like inventory or fixture installation, not a single massive form)
+  - ✅ **Question library:** Reusable question bank allowing shared question instances across multiple call forms/projects
+  - ✅ **Question types:**
+    - Standard: multiple choice, text, photo, signature, date/time
+    - Grid questions: ask same question across multiple items/SKUs simultaneously
+    - Conditional questions: parent/child logic, display rules based on prior answers, store attributes, date ranges, product/SKU presence
+  - ✅ **Mobile workflow:** Synced to mobile app, offline-first architecture with local XML file, data entry works without cellular connectivity
+  - ✅ **Data output:** Primary = internal reporting, Secondary = client exports (Samsung, LG) via files or APIs
+  - ✅ **Client service manager setup:** Creates one survey, attributes to multiple waves/stores, create once use across many visits
 - **Questions:**
   - How many surveys does a client service manager build per month? (One per client? One per wave? Dozens?)
   - How long does it take to build a complex survey from scratch? (Hours? Days?)
@@ -327,11 +377,21 @@
 
 ### Salesforce Compatibility Check
 
+- **ANSWERED:**
+  - ✅ **Non-negotiable features identified:**
+    - 600-1,200 question scale
+    - Task subdivision (section navigation)
+    - Grid questions (multi-item efficiency)
+    - Conditional logic (parent/child, date-based, product-based)
+    - Reusable question library
+    - Offline-first (critical for retail environments with poor connectivity)
+  - ✅ **Competitive risk:** Survey flexibility is HIGH RISK area for OpenSky replacement - must demonstrate equivalent or superior capability
 - **Questions:**
   - If we showed you Salesforce Lightning Web Components (custom mobile forms) + Flow Builder (conditional logic), could you replicate your most complex survey?
-  - What OpenSky survey features are non-negotiable? (Product/SKU pivoting? Date-based question visibility? Photo capture with GPS tagging? Signature? Barcode scanning?)
+  - What OpenSky survey features are non-negotiable beyond what we've documented? (Product/SKU pivoting? Date-based question visibility? Photo capture with GPS tagging? Signature? Barcode scanning?)
   - Do you use any third-party survey tools? (SurveyMonkey, Typeform, etc.) Or is OpenSky's survey engine sufficient?
   - If Salesforce survey builder was 80% as flexible but 50% faster to build, would that be acceptable?
+  - Would AppExchange partners (FormAssembly, Survey Force) be acceptable for advanced survey needs?
 
 ---
 
@@ -355,6 +415,10 @@
 
 **Jay: "There is some opportunity there and then Mike to your specific question... in the near future."**
 
+- **ANSWERED:**
+  - ✅ **Timeline:** Next 2-3 months (mentioned in June 18 reverse demo)
+  - ✅ **Vision:** Shift from LOB silos to geographic model for "fluid resources" who can work across multiple clients/work types
+  - ✅ **Requires changes to:** Incentives, training, systems, reporting hierarchy
 - **Questions:**
   - What's driving the shift from LOB silos to geographic model? (Cost? Efficiency? Client demand? PE mandate?)
   - What's the timeline? (Announced? In planning? Rolling out by region?)
@@ -365,6 +429,10 @@
 
 ### Incentives for Cross-LOB Work
 
+- **ANSWERED:**
+  - ✅ **Current gap (Jay quote):** "A merch goes to a target, sees one of the install broken or a display broken. There is not even an incentive for the person to capture that and send it because that's not the line of business."
+  - ✅ **No automated workflow:** Even if issue is sent, there's no automatic trigger/escalation workflow happening on back end
+  - ✅ **Billing complexity:** Different work types have different billing models (hourly for shared teams, salary for dedicated teams, per-diem for some projects, alternate pay rates for specific stores)
 - **Questions:**
   - Today: No incentive for merch rep to flag break-fix issue. What would the incentive be? (Bonus per referral? Paid for extra time? Recognition/gamification?)
   - Do reps get paid differently for different work types? (Higher rate for construction than merch?)
@@ -417,11 +485,17 @@
 
 ---
 
-## 11. Competitive Landscape
+## 11. Competitive Landscape & Privacy Constraints
 
 **Dan asked: "Are you evaluating other solutions?"**  
 **Jay deferred in demo — can we ask now?**
 
+- **ANSWERED:**
+  - ✅ **Legal/privacy constraints identified:**
+    - NO body cams or glasses recording in retail environments (loss prevention policies)
+    - Cannot capture customer footage (legal constraints)
+    - Photo capture limited to products/fixtures/compliance (not people)
+  - ✅ **FSL demo implication:** No wearables or AR demo components for retail use cases
 - **Questions:**
   - Are you evaluating ServiceMax, FieldAware, FieldOne, or other workforce management platforms?
   - Did you evaluate any platforms before deciding to build OpenSky? (What did you rule out and why?)
