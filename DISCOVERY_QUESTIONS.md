@@ -298,6 +298,30 @@ If these 5 themes are solved:
 - 50% reduction = 1.3M fewer go-backs = **$130M/year savings**
 - Critical: Validate actual go-back rate, cost per go-back, % by root cause
 
+### Survey Workflows and Task Management
+**ANSWERED:**
+- ✅ **Survey flexibility:** Ability to pause tasks and resume later (offline-first architecture supports partial save)
+- ✅ **Go-back definition:** Technician must return to store to complete work due to missing materials, customer issues, or other blockers
+
+### System Integration Landscape and Modernization Strategy
+**ANSWERED:**
+- ✅ **Systems involved:** OpenSky, Project Center (homegrown WMS), Sphere (third-party WMS), Launch (third-party WMS), Logiwa (mentioned in integration discussion)
+- ✅ **Challenge:** Managing multiple homegrown and third-party solutions creates complexity
+- ✅ **Consensus:** Need to replace legacy technology with scalable enterprise WMS
+- ✅ **Strategy:** Implement API gateways to decouple services and ease future system migrations (protect Samsung/LG integrations from underlying system changes)
+
+### AI and Automation Initiatives
+**ANSWERED:**
+- ✅ **Automation team:** Dedicated team exploring AI solutions for process improvement
+- ✅ **Initiative 1 - Conversational Chatbot:** Bidirectional AI for internal knowledge base queries (reduce support center call volume, self-service for reps/managers)
+- ✅ **Initiative 2 - Automated QC:** Image comparison AI to verify task completion, auto-generate exception task lists (quality issues flagged in real-time while rep on-site)
+- ✅ **Strategic shift:** Moving from high-level "Yes" commitments to strategic KPI alignment, focus on optimizing resource utilization and reducing need for new hires through process standardization
+
+**Salesforce Opportunity:** 
+- Einstein Bot + Knowledge Base (conversational AI searches Knowledge Articles, Work Order history, Case history, integrated in Slack/FSL Mobile)
+- Einstein Vision for image recognition (analyze before/after photos, auto-flag quality issues, real-time feedback in FSL Mobile)
+- AI QC ROI: $13.2M/year ($240K manual QA savings + $13M quality go-back reduction)
+
 ---
 
 ## Today's Focus: Architecture, Integration, Positioning
