@@ -31,8 +31,11 @@
 5. **James (Data Director):** Real-time delta data extraction (not 4-hour batch)
 
 **Business Performance Assessment (Stephen's Exercise):**
-- **Marketing effectiveness:** 3/10 (rated low due to resource optimization issues, not marketing team failure)
-- **Root causes:** Lead generation misses (capacity constraints), unbalanced resource ratio (full-time vs. part-time vs. floater), over-reliance on "part-timers" as generic bucket (no distinction between reliable retained part-timers and gig workers), lack of cross-training (tactics locked to specific skills, can't optimize availability)
+- **Marketing:** 3/10 (resource optimization issues: capacity constraints, unbalanced ratios, part-timer segmentation gaps, no cross-training)
+- **Sales/Contracting:** 5/10 (people-driven not systemic, manual processes, no cohesive glue)
+- **Project Kickoff:** 5/10 (fragmented systems, custom client requirements without standardized provisioning, procurement delays)
+- **Execution/Scheduling:** Core bottleneck (managers use "spreadsheet magic" based on personal relationships instead of trusting OpenSky, lack of system-captured capacity data, prevents cross-training optimization)
+- **Cultural Challenge:** "Have it your way" culture blocks scalability (bespoke workflows per LOB, regional variations, no standardization across 6 merged companies)
 
 ---
 

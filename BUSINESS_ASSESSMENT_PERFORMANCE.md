@@ -162,10 +162,257 @@ Jay described marketing effectiveness as a "loaded question" because **marketing
 
 ---
 
+---
+
+## Sales and Contracting: 5/10
+
+**Rating:** 5 out of 10
+
+### Root Causes
+
+#### Heavy People-Driven Process (Not Systemic)
+
+**Problem:**
+- Sales and contracting relies on individual relationships, tribal knowledge, manual handoffs
+- No structured CRM or opportunity management system
+- Contract terms not standardized (every deal is bespoke)
+- Lack of cohesive "glue" to connect sales → contracting → project setup
+
+**Quote (paraphrased):**
+> "The process is heavily people-driven rather than systemic, largely manual and lacks a cohesive 'glue' to connect various processes."
+
+**Impact:**
+- Long sales cycles (manual proposal generation, custom contract negotiation)
+- Inconsistent pricing (no CPQ, sales reps price deals based on intuition)
+- Revenue leakage (custom terms not captured in systems, billing misses)
+- Handoff failures (sales promises something operations can't deliver)
+
+**Salesforce Opportunity:**
+- **Sales Cloud** for opportunity management, pipeline visibility, forecasting
+- **CPQ (Configure, Price, Quote)** for standardized pricing, automated proposal generation
+- **Contract Lifecycle Management** for standardized contract templates, approval workflows
+- **Slack integration** for sales → operations handoff (opportunity alert → project kickoff)
+
+---
+
+## Project Kickoff and Initiation: 5/10
+
+**Rating:** 5 out of 10
+
+### Root Causes
+
+#### Fragmented System Landscape
+
+**Problem:**
+- Multiple systems involved in project setup: OpenSky, Project Center (WMS), homegrown tools
+- No single source of truth for project definition
+- Manual data entry across systems (Call Form in OpenSky, then parts order in Project Center, then...)
+
+**Systems Involved:**
+1. OpenSky (Call Form/Wave setup)
+2. Project Center WMS (parts/materials if needed)
+3. LearnUpon LMS (training assignment if required)
+4. Business Central (job costing setup)
+5. Homegrown tools (custom workflows for specific clients)
+
+**Quote (paraphrased):**
+> "Rated a 5 out of 10 due to the fragmented system landscape (including Open Sky, Project Center, and homegrown tools)."
+
+---
+
+#### Custom Client Requirements Without Standardized Provisioning
+
+**Problem:**
+- Sales agrees to custom client requirements (bespoke survey questions, custom reporting, unique workflow)
+- **No standardized provisioning process** to implement these customizations
+- Operations scrambles to build custom solution after contract signed
+- Procurement and setup delays (must order special parts, build new survey, train reps on unique workflow)
+
+**Example Scenario:**
+1. Sales closes deal with new brand client (Samsung wants custom display audit process)
+2. Contract includes 47 custom survey questions + photo requirements + parts ordering workflow
+3. Operations receives contract AFTER signature
+4. Must build custom Call Form, train reps, order parts, set up reporting
+5. **2-4 week delay** before project can start
+6. Client frustrated (expected immediate start after contract signed)
+
+**Impact:**
+- Project start delays (revenue recognition delayed)
+- Rushed implementations (quality suffers, errors increase)
+- Rep frustration (assigned to project without proper training)
+- Client dissatisfaction (delays, quality issues)
+
+**Salesforce Opportunity:**
+- **Project Templates** (reusable Work Order templates for common project types)
+- **Product Catalog + CPQ** (standardized service offerings, custom options priced and provisioned automatically)
+- **Flow Automation** (contract signed → auto-create project → auto-assign resources → auto-trigger training)
+- **Configuration Management** (custom client requirements tracked as metadata, provisioned via clicks not code)
+
+---
+
+## Execution and Scheduling: BOTTLENECK
+
+**Rating:** Not explicitly rated, but identified as **core bottleneck**
+
+### Root Causes
+
+#### Managers Rely on Manual "Spreadsheet Magic"
+
+**Problem:**
+- OpenSky HAS scheduling capabilities (self-scheduling, buckets, matching logic)
+- **Managers don't trust system recommendations**
+- Revert to manual scheduling using spreadsheets
+- Assign work based on **personal relationships with field reps** rather than system-generated matches
+
+**Quote (paraphrased):**
+> "Although Open Sky possesses scheduling capabilities, managers frequently rely on manual 'spreadsheet magic' to assign work based on personal relationships with field representatives rather than trusting system-generated recommendations."
+
+**Why Managers Don't Trust OpenSky:**
+1. **System recommendations don't match reality** (suggests rep who is actually unavailable, on vacation, working other project)
+2. **No real-time capacity visibility** (system shows rep available, but manager knows rep is fully booked)
+3. **Skills/certifications not accurate** (system says rep trained on break/fix, but manager knows rep hasn't done break/fix in 6 months)
+4. **Personal knowledge of rep preferences** (manager knows rep prefers certain stores, certain work types, certain days)
+
+**Impact:**
+- Scheduling takes hours/days instead of minutes
+- Managers work nights/weekends to manually schedule
+- Suboptimal assignments (manager picks "favorite" rep, not best-fit rep)
+- Rep burnout (high performers get overloaded because managers always pick them)
+- Underutilization (low performers sit idle because managers avoid assigning them work)
+
+---
+
+#### Lack of System-Captured Capacity Data
+
+**Problem:**
+- **Employee availability NOT captured in OpenSky**
+- No vacation calendar, no PTO tracking, no "I'm available 20 hours this week" input
+- Managers must manually track availability in spreadsheets, mental models, Slack DMs
+
+**Quote (paraphrased):**
+> "The lack of system-captured capacity data (employee availability) forces managers to perform manual scheduling, often outside of work hours."
+
+**What's Missing:**
+1. **PTO/Vacation Calendar:** Rep takes vacation, doesn't block calendar in OpenSky
+2. **Availability Preferences:** Part-time rep wants 15 hours/week, system doesn't know
+3. **Multi-Project Conflicts:** Rep assigned to 2 projects simultaneously, neither manager sees the conflict
+4. **Real-Time Status:** Rep calls out sick, manager doesn't see updated availability in system
+5. **Skills Currency:** Rep trained 6 months ago, hasn't used skill since (rusty, but system shows "certified")
+
+**Impact:**
+- Double-booking (rep assigned to 2 projects same day)
+- No-shows (rep on vacation, manager didn't know)
+- Overwork (rep assigned 60 hours when they wanted 20)
+- Underutilization (rep available 40 hours, only assigned 15)
+
+**Salesforce Opportunity:**
+- **Service Resource Capacity** (PTO, vacation, availability preferences in FSL)
+- **Resource Absences** (sick days, emergencies automatically update availability)
+- **Multi-Work Order Visibility** (see all assignments across all projects for a rep)
+- **Real-Time Status** (mobile app: "I'm running late", "I'm available for emergency dispatch")
+
+---
+
+#### Prevents Cross-Training and Multi-Tactic Optimization
+
+**Problem:**
+- Manual scheduling based on personal relationships reinforces LOB silos
+- Manager only assigns merchandising work to "my merchandising reps"
+- Never considers assigning break/fix work to merchandising rep (even if rep trained and available)
+- **No system incentive to cross-train** (can't see ROI of multi-tactic rep in scheduling workflow)
+
+**Example:**
+- Merchandising manager has 10 reps
+- Break/fix manager has 10 reps
+- Slow week for merchandising (only 100 hours of work, 10 reps × 40 hours = 400 hours capacity)
+- Busy week for break/fix (500 hours of work, 10 reps × 40 hours = 400 hours capacity)
+- **Result:** Merchandising reps idle, break/fix reps working overtime
+- **Better outcome:** Cross-train 5 reps, flex them to break/fix for busy week
+- **Blocker:** Managers don't see capacity across LOBs, don't trust system to optimize
+
+---
+
+## Cultural Standardization Challenge: "Have It Your Way" Culture
+
+**Rating:** Not explicitly rated, but identified as **significant barrier to scalability**
+
+### Root Cause
+
+**Quote (paraphrased):**
+> "The leadership identified a 'have it your way' culture as a significant barrier to scalability. Standardizing processes across lines of business remains a challenge, as various teams prefer bespoke workflows over a unified system approach."
+
+**Manifestations:**
+
+#### 1. Sales Agrees to Custom Requirements
+- Every client deal includes custom terms
+- "We can do that" culture (sales says yes to everything)
+- No pushback to fit client into standard offerings
+
+#### 2. LOB Teams Build Bespoke Workflows
+- Merchandising team has their own survey structure
+- Break/fix team has different time tracking process
+- Installations team uses different approval hierarchy
+- Audits team has custom reporting requirements
+
+#### 3. Regional Variations
+- Minnesota region (RMS acquisition) operates differently
+- Each of the 6 original companies (Apollo, BDS, WhiteHawk, BTR, MAG, MaaS) had own processes
+- Post-merger: didn't fully standardize, allowed regional flexibility
+
+#### 4. Manager Preferences
+- Each manager has own scheduling approach
+- Some use OpenSky self-scheduling, some do hard scheduling, some do spreadsheets
+- No enforcement of standard process
+
+---
+
+## Impact on Scalability
+
+**Why "Have It Your Way" Culture Blocks Growth:**
+
+1. **Can't onboard new acquisitions quickly** (RMS taking 12+ months to integrate)
+2. **Can't scale operations team** (need specialized knowledge for each LOB's bespoke workflow)
+3. **Can't automate** (every workflow is custom, no economies of scale)
+4. **Can't train new managers** (too many variations, tribal knowledge required)
+5. **Can't optimize resources** (cross-LOB visibility impossible when each LOB uses different process)
+
+**PE Rollup Context:**
+- Channel Partners is PE-backed, likely will acquire more companies
+- Every acquisition will have own systems, processes, culture
+- If Channel Partners can't standardize itself (6 merged companies still not fully unified), how will it integrate next 3-5 acquisitions?
+
+---
+
+## Salesforce Change Management Opportunity
+
+**Key Message:**
+> "Salesforce implementation is a forcing function for standardization. You can't have 5 different ways to do the same thing on one platform. This is a feature, not a bug."
+
+**Approach:**
+1. **Define "Standard" vs. "Custom":**
+   - Standard: 80% of projects use same workflow (merchandising, audits, basic break/fix)
+   - Custom: 20% of projects require bespoke workflow (installations, experiential, complex break/fix)
+
+2. **Standardize the Standard:**
+   - Merchandising Work Type (standard survey, standard time tracking, standard parts process)
+   - Break/Fix Work Type (standard troubleshooting workflow, standard parts ordering)
+   - Audit Work Type (standard checklist, standard photo requirements)
+
+3. **Architect for Custom:**
+   - Custom Work Types for bespoke projects (Samsung Installation, LG Display Refresh, etc.)
+   - Field-level customization (add custom survey questions, custom approval steps)
+   - Client-specific Experience Cloud portals (custom reporting, custom KPIs)
+
+4. **Governance:**
+   - Only Sales VPs can approve custom work (not every account exec)
+   - Custom work must be priced higher (margin for complexity)
+   - Quarterly review: migrate high-volume custom work to standard offerings
+
+---
+
 ## Open Questions for Next Assessment Areas
 
 **Other functional areas to rate:**
-- Operations effectiveness (scheduling, dispatch, execution)
 - Client service / account management
 - Finance / billing / invoicing
 - HR / recruiting / retention
@@ -173,20 +420,71 @@ Jay described marketing effectiveness as a "loaded question" because **marketing
 - Training / learning & development
 
 **Hypothesis:**
-- Operations will rate LOW (scheduling inefficiencies, July 6 rollout risk)
 - Finance will rate MEDIUM (Business Central works, but project profitability visibility is poor)
 - IT will rate LOW (3 WMS systems, Freshdesk not integrated, RMS Portal not integrated, Mars not integrated)
 - Client service will rate MEDIUM (Freshdesk works, but manual processes, no self-service portals)
 
 ---
 
+## Summary: Core Themes Across Assessments
+
+### 1. Manual Processes Blocking Scale
+- Sales/contracting: manual proposals, no CPQ
+- Project kickoff: manual data entry across fragmented systems
+- Scheduling: "spreadsheet magic" instead of system optimization
+- Result: Can't scale beyond current size without linear headcount growth
+
+### 2. Lack of System Trust
+- Managers don't trust OpenSky scheduling recommendations
+- Fall back to personal relationships and tribal knowledge
+- System data not accurate (availability, skills, real-time status)
+- Result: System investment wasted, manual work continues
+
+### 3. "Have It Your Way" Culture
+- Sales agrees to custom requirements without standardization
+- Each LOB operates differently (bespoke workflows)
+- Regional variations (RMS, original 6 companies not fully unified)
+- Result: Can't onboard acquisitions quickly, can't automate, can't optimize
+
+### 4. Capacity Visibility Gap
+- Employee availability not captured in system
+- Managers manually track in spreadsheets/mental models
+- Can't see capacity across LOBs (merchandising idle, break/fix overtime)
+- Result: Underutilization + overtime simultaneously, can't pursue new leads
+
+### 5. Cross-Training Blocker
+- Manual scheduling reinforces LOB silos
+- No system incentive to assign multi-tactic work
+- Skills currency unknown (trained 6 months ago, rusty now)
+- Result: Can't flex resources, must hire for each LOB separately
+
+---
+
+## Salesforce FSL Value Hypothesis
+
+**If these 5 themes are solved, what's unlocked?**
+
+1. **Automated scheduling** replaces "spreadsheet magic" → Managers save 10-15 hours/week
+2. **Real-time capacity visibility** → Optimize utilization, reduce overtime 20%
+3. **Skills-based routing** → Cross-train reps, flex across LOBs
+4. **Standardized workflows** → Onboard RMS in 30 days (not 12 months)
+5. **Sales Cloud + CPQ** → Standardize 80% of deals, custom only when needed
+
+**ROI Impact:**
+- 15% efficiency gain = 1.3M freed hours/year = $32M revenue capacity
+- 20% overtime reduction = $8M/year cost savings (4,140 reps × $50k avg salary × 10% overtime × 20% reduction)
+- 30-day acquisition onboarding = faster PE rollup execution = higher exit multiple
+
+---
+
 ## Next Steps
 
-1. **Continue performance assessment** across other functional areas
-2. **Quantify efficiency gaps** (idle time %, overtime %, lead decline rate)
-3. **Map gaps to FSL capabilities** (scheduling, skills-based routing, mobile UX)
-4. **Build ROI model** (freed capacity → revenue growth → profit)
-5. **Identify pilot scope** (single LOB, single geography, 100 reps) to prove value
+1. **Continue performance assessment** (client service, finance, IT, HR, training)
+2. **Quantify current state** (idle time %, overtime %, lead decline rate, manager scheduling hours)
+3. **Map gaps to FSL capabilities** with specific feature-to-problem mapping
+4. **Build ROI model** with validated assumptions (not hypothesis)
+5. **Identify pilot scope** (single LOB, 100 reps, 90 days) to prove scheduling ROI
+6. **Change management plan** to address "have it your way" culture and system trust gap
 
 ---
 
