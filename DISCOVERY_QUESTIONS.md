@@ -80,6 +80,8 @@ OPEN SKY PLATFORM
 - ✅ **Data integration architecture:** SFTP → S3 staging → Snowflake (central ETL provider) → Tableau/PowerBI
 - ✅ **Snowflake sources:** OpenSky operational data + client POS data + ADP HR reports + third-party site data (geospatial, demographics, retail traffic) + Mars (third-party labor)
 - ✅ **Mars system:** Manages third-party labor (contractors/partners), tracks hours, handles invoicing/billing, NOT integrated into OpenSky employee workflows
+- ✅ **Freshdesk system:** Support center ticketing (phone/chat), handles internal employee support + external client-facing issues, NOT automated with OpenSky (account teams manually upload issues)
+- ✅ **Break/Fix operations:** Field technicians maintain interactive displays, collaborate live with support center, parts ship directly to stores
 - ✅ **Client data sharing:** File extracts (CSV), legacy API gateways, modern APIs (migration in progress)
 - ✅ **Reporting:** Tableau (client portals, limited access due to licensing), PowerBI (internal ops)
 - ✅ **Communication:** SmarterMail (part-time staff, avoids Microsoft E3 license costs), ARSCONNECT.COM email (corporate), Go Happy (bidirectional mass campaigns)

@@ -120,6 +120,8 @@ Call Form (Project)
        ├──────────► LearnUpon LMS (certifications, training)
        ├──────────► WMS (warehouse: pick/pack/ship)
        ├──────────► Agency (travel booking: flights/hotels)
+       ├──────────► Mars (third-party labor management)
+       ├──────────► Freshdesk (support center: phone/chat)
        ├──────────► Snowflake (data warehouse: ETL 4x/day)
        └──────────► Client APIs (Samsung, LG: file/API feeds)
                             │
@@ -585,6 +587,97 @@ iCIMS (recruit/hire)
 - **Experience Cloud:** Field rep portal (replace intra-ID portal)
 - **Marketing Cloud:** Mass communication campaigns (replace Go Happy)
 - **Email-to-Case / Email-to-Anything:** Replace SmarterMail for support workflows
+
+---
+
+## Support Center & Break/Fix Operations
+
+### Freshdesk (Support Center Ticketing)
+
+**Purpose:**
+- Primary ticketing system for support center phone and chat interactions
+- Handles both internal (employee IT/system support) and external (client-facing) issues
+
+**Current Integration with OpenSky:**
+- Support teams use both Freshdesk and OpenSky side-by-side
+- No automated integration
+- **Manual process:** Account teams manually upload issues from Freshdesk into OpenSky
+- Issues surface as mobile app tasks for field reps
+
+**Support Center Infrastructure:**
+- Multiple telephony systems across different locations (not unified)
+- Freshdesk serves as unified ticketing layer on top of fragmented phone systems
+- Support center provides live assistance to field reps troubleshooting on-site
+
+### Break/Fix Operations Workflow
+
+**Overview:**
+- Break/Fix is a service line focused on maintaining interactive displays at retail locations
+- Field technicians troubleshoot issues on-site, often collaborating live with support center
+
+**Typical Workflow:**
+1. Store or client reports issue to support center (phone, chat, email)
+2. **Account teams manually upload issue into OpenSky**
+3. Issue surfaces as task in field rep's mobile app
+4. Rep arrives at store, troubleshoots issue
+5. Rep collaborates live with support center (phone/chat) if needed
+6. If parts required:
+   - Parts ordered in OpenSky (approval for high-value items)
+   - Parts shipped directly to store (not to rep's home)
+   - Rep returns later to install parts
+7. Rep completes work order with photos/notes
+8. Ticket closed in Freshdesk
+
+**Live Collaboration:**
+- Field reps connect with support center in real-time during troubleshooting
+- Support center has visibility into store location, display details, part inventory via OpenSky
+- Collaborative problem-solving reduces unnecessary parts orders
+
+**Pain Points:**
+- No Freshdesk → OpenSky automation (manual upload by account teams)
+- Multiple telephony systems (fragmented, not unified)
+- Parts tracking visible in mobile app, but go-backs still occur (wrong parts, incomplete troubleshooting)
+
+### Resource Management: Dedicated vs. Cross-Functional
+
+**Current State (LOB Silos):**
+- Dedicated break/fix teams (~500 reps estimated)
+- Reps work exclusively on break/fix issues
+- Deep expertise in display maintenance
+- Internal preference for dedicated structure
+
+**Future State (Cross-Functional Model):**
+- Move away from dedicated break/fix teams
+- Assign multiple "tactics" (skill sets) to field staff
+- Same rep can do: merchandising + break/fix + audits
+- Optimize resource allocation across LOBs
+- Reduce idle time (rep does merch visit, spots break/fix issue, handles it same visit)
+
+**Organizational Goal:**
+- Cross-train reps to handle multiple work types
+- Requires: incentive changes, training, systems support
+
+**Challenges:**
+- Internal resistance (reps/managers prefer dedicated teams)
+- Skills/training gap (merch rep may not know how to troubleshoot displays)
+- Billing complexity (how to allocate time across multiple work types in same visit)
+
+### Second Nature (AI Training Tool)
+
+**Purpose:**
+- Tool designed to capture support interactions (calls, chats)
+- Feed intelligence back into training models
+- Improve rep knowledge and reduce support call volume
+
+**Current State:**
+- **Not fully implemented** (exploring, not in production)
+- Vision: Analyze support interactions to identify training gaps
+- Use case: If 50 reps call about same issue, create training content proactively
+
+**Salesforce Opportunity:**
+- Einstein Discovery could analyze support interactions (replace Second Nature)
+- Auto-generate training content based on support patterns
+- Trailhead integration for proactive training delivery
 
 ---
 
