@@ -189,6 +189,16 @@ iCIMS (recruit/hire)
 
 #### 4. OpenSky ⟷ WMS (Warehouse Management)
 
+**Current WMS Landscape (3 Systems):**
+1. **Project Center WMS** - Homegrown system
+2. **Sphere** - Third-party platform
+3. **Launch** - Third-party system
+
+**Integration Priority:**
+- Goal: Consolidate 3 WMS into single enterprise solution
+- Risk: Breaking existing custom integrations (particularly Samsung)
+- Mitigation strategy: API gateway/proxy layer to decouple integrations from underlying WMS (allows system swaps without forcing clients to rework their integrations)
+
 **Data Flow:**
 - Parts requests pushed from OpenSky to warehouse
 - Pick/pack/ship integration
@@ -542,6 +552,56 @@ iCIMS (recruit/hire)
 6. Push schedule to entire team
 
 **Pain Point:** Manual, time-consuming, error-prone.
+
+---
+
+## Communication Infrastructure
+
+### Email & Messaging Architecture
+
+**SmarterMail (Part-Time Staff):**
+- Used for most employees to manage licensing costs
+- Avoids full Microsoft E3 licenses for part-time staff
+- Part-time staff use intra-ID for portal access + SmarterMail for communication
+
+**ARSCONNECT.COM (Corporate Email):**
+- Corporate employees use ARSCONNECT.COM email addresses
+- Distinction between corporate and part-time roles is narrowing
+
+**Go Happy (Mass Communication):**
+- Tool for bidirectional communication campaigns (email + text)
+- Used for mass outreach to field reps
+
+**Salesforce Alternative:**
+- **Slack:** Team collaboration, automated notifications
+- **Experience Cloud:** Field rep portal (replace intra-ID portal)
+- **Marketing Cloud:** Mass communication campaigns (replace Go Happy)
+- **Email-to-Case / Email-to-Anything:** Replace SmarterMail for support workflows
+
+---
+
+## Go-Backs Process
+
+**Definition:** Instances where a field representative must return to a store to complete work that was originally missed or could not be finished during the first visit.
+
+**Common Causes:**
+- Incomplete kits (missing materials)
+- Customer density (store too crowded to complete work)
+- Store unavailability (closed unexpectedly, remodeling, etc.)
+- Wrong parts shipped
+- Rep didn't have required skills/training
+
+**Current Tracking:**
+- Call Form Quality Assurance tool flags answers needing follow-up
+- Creates revisits for reps to complete
+- Deficiency Reporting tracks issues with statuses, resolutions, follow-up dates, shipment tracking
+
+**Cost Impact:**
+- Additional mileage reimbursement
+- Additional labor hours
+- Client frustration
+- Reputation damage
+- Delayed project completion
 
 ---
 

@@ -62,19 +62,24 @@ OPEN SKY PLATFORM
   ↓
   ├→ Business Central (ERP: job costing, invoicing)
   ├→ LearnUpon LMS (certifications, training)
-  ├→ WMS (warehouse: pick/pack/ship)
+  ├→ WMS (3 systems: Project Center, Sphere, Launch)
   ├→ Agency (travel booking: flights/hotels)
   ├→ Snowflake (data warehouse: ETL 4x/day)
-  └→ Client APIs (Samsung, LG: file/API feeds)
+  ├→ Client APIs (Samsung, LG: file/API feeds)
+  ├→ SmarterMail (part-time staff email)
+  ├→ Go Happy (mass communication: email/text campaigns)
+  └→ Target (schedule/check-in/check-out data)
        ↓
     Tableau (client portals + internal BI)
 ```
 
 **Data Flow Details:**
 - ✅ **Employee lifecycle:** iCIMS → GAMS (unique ID assignment) → ADP → AWS → OpenSky
+- ✅ **WMS landscape:** 3 systems (Project Center homegrown, Sphere third-party, Launch third-party) → consolidation planned with API gateway/proxy layer to protect Samsung integrations
 - ✅ **Snowflake sources:** OpenSky operational data + client POS data + ADP HR reports + third-party site data (geospatial, demographics, retail traffic)
 - ✅ **Client data sharing:** File extracts (CSV), legacy API gateways, modern APIs (migration in progress)
 - ✅ **Reporting:** Tableau (client portals, limited access due to licensing), PowerBI (internal ops)
+- ✅ **Communication:** SmarterMail (part-time staff, avoids Microsoft E3 license costs), ARSCONNECT.COM email (corporate), Go Happy (bidirectional mass campaigns)
 
 ### Current State Mapping
 
@@ -107,6 +112,13 @@ OPEN SKY PLATFORM
 - Data flows: Shipping requests (OpenSky → WMS), tracking data (WMS → OpenSky)
 - Pain point: Partner warehouse data is manual (spreadsheet upload)
 - **ANSWERED:**
+  - ✅ **Current WMS landscape - 3 systems:**
+    1. **Project Center WMS** (homegrown)
+    2. **Sphere** (third-party platform)
+    3. **Launch** (third-party system)
+  - ✅ **Integration priority:** Consolidate 3 WMS into single enterprise solution
+  - ✅ **Integration risk:** Breaking existing custom integrations, particularly Samsung
+  - ✅ **Mitigation strategy:** API gateway/proxy layer to decouple integrations from underlying WMS (allows system swaps without forcing clients to rework their integrations)
   - ✅ **WMS integration:** "OS Integration with a WMS system for all shipping. WMS is then integrated with the shipping providers for rates and service. The integration provides inventory on all parts/products in the warehouse to OS users creating shipments"
   - ✅ **Shipping Module:** "Module to enable users to create shipping requests that go into a queue for the team/warehouse to manage. Requests go through statuses until they are approved by the warehouse and flow (through an integration) into the Warehouse Management System (WMS) for processing"
   - ✅ **Warehouse Queue:** "Warehouse request queue where warehouse can edit/move requests into the WMS for processing"
@@ -115,12 +127,12 @@ OPEN SKY PLATFORM
   - ✅ **CP warehouse integration:** If parts shipped from CP Warehouse, WMS integrated to provide shipping info after completion
   - ✅ **Partner warehouse workaround:** Manual upload of shipping details where fulfillment partner is not CP warehouse
 - **Questions:**
-  - Which WMS vendor? (Kari wouldn't name it in demo — can you now?)
-  - How many warehouses? (CP's 60K sq ft facility + partner warehouses?)
+  - What % of shipments come from each WMS? (Project Center vs Sphere vs Launch?)
   - What % of shipments come from CP warehouse vs. partners?
-  - Why is partner warehouse data manual? (No API access? Different WMS per partner?)
+  - Timeline for WMS consolidation? (In progress? Planned for 2027?)
+  - Samsung integration specifics - what would break if we swapped WMS without API gateway?
+  - If Salesforce FSL replaced OpenSky, could MuleSoft serve as the API gateway/proxy layer you need?
   - Do you need real-time inventory visibility, or is shipment tracking enough?
-  - If we integrated via MuleSoft, could we unify CP + partner warehouse data?
 
 **LMS (Learning Management System):**
 - Data flows: Users/teams (OpenSky → LMS), course completions (LMS → OpenSky)
@@ -464,15 +476,22 @@ OPEN SKY PLATFORM
 **Jay: "Real time exception reporting minimize the gobacks."**
 
 - **ANSWERED:**
+  - ✅ **Definition (John):** "Go-backs" refer to instances where a field representative must return to a store to complete work that was originally missed or could not be finished during the first visit
+  - ✅ **Common causes identified:**
+    - Incomplete kits (missing materials)
+    - Customer density (store too crowded to complete work)
+    - Store unavailability (closed unexpectedly, remodeling, etc.)
+    - Wrong parts shipped
+    - Rep didn't have required skills/training
   - ✅ **Call Form Quality Assurance:** "Client service tool to flag particular answers to questions as needing follow up, creates revisits for the reps to complete"
   - ✅ **Deficiency Reporting:** "Itemized issue tracking by scope of work. Issues that are reported by the reps are trackable items with their own statuses and data fields including any resolutions, follow-up, go back dates and shipment tracking info associated with that issue."
   - ✅ **Work Order Scopes:** "Scopes serve as a container for all associated photos and documents as well as issues reported. Scopes are statused and trackable"
   - ✅ **Parts/Issue Resolution tracking:** Field reps can provide updates/feedback about all Part Issues/Orders for the location, see active part orders requiring status and completion photos
 - **Questions:**
   - How many go-backs per week? (Across all 4,140 reps? By LOB?)
-  - What causes go-backs? (Wrong parts? Incomplete work? Rep didn't have right skills? Store wasn't ready? Instructions unclear?)
   - What's the cost of a go-back? (Mileage, labor, client frustration, reputation damage?)
   - Do you track go-back root causes? (Categorize by reason? Track trends over time?)
+  - What % of go-backs are due to incomplete kits vs customer density vs store unavailability vs wrong parts vs rep skills?
   - If AI could predict "this job is likely to require a go-back based on incomplete survey responses," would that help? (Alert manager before rep leaves site?)
   - Could Einstein detect patterns? ("Rep C has 3x higher go-back rate on Samsung installs — recommend additional training?")
   - How does the Call Form QA process work? Manual review or automated flagging based on answer patterns?
