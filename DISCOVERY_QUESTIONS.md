@@ -322,6 +322,13 @@ If these 5 themes are solved:
 - Einstein Vision for image recognition (analyze before/after photos, auto-flag quality issues, real-time feedback in FSL Mobile)
 - AI QC ROI: $13.2M/year ($240K manual QA savings + $13M quality go-back reduction)
 
+**Additional AI Use Cases (Brainstormed):**
+- ✅ **Lead Analysis:** Einstein GPT analyzes sales call transcripts, evaluates lead quality, auto-generates follow-up tasks, $1.25M/year time savings + $5M/year revenue impact from faster response
+- ✅ **Computer Vision for Retail Execution:** Einstein Vision analyzes product displays (inventory counts, model assortments, stock-outs, signage placement), auto-populates surveys, $41M/year labor savings + $10M client retention
+- ✅ **Behavioral Tracking:** IoT sensors or in-store cameras monitor customer interaction patterns (foot traffic, dwell time, product interest), optimize scheduling and display placement, $41M/year scheduling efficiency + $10M incremental revenue
+- ✅ **Data Actionability Emphasis:** AI value is triggering immediate automated actions (not just reports), every AI insight → immediate action (alert rep on-site, create Work Order, notify manager)
+- ✅ **Data Foundation Urgency:** Start capturing high-quality data NOW (photos, go-back reasons, call recordings, baseline metrics) to enable AI model training by Month 6-8, avoid 6-month delay = $6.6M ROI loss
+
 ### Construction Group: Third-Party Contractor Model
 **ANSWERED:**
 - ✅ **Scope:** Building out entire store sections (flooring, tables, TVs) rather than routine maintenance
