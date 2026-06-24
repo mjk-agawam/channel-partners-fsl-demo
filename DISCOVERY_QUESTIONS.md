@@ -8,9 +8,9 @@
 ## Executive Summary from June 18 Reverse Demo
 
 **Company Reality:**
-- **PE-backed consolidator:** Unified 6 companies (Apollo, BDS, WhiteHawk, BTR, MAG, MaaS)
-- **4,140 W-2 field reps** nationwide (31 corporate staff)
-- **Hybrid services:** Break-fix, installations (5-15 person teams), merchandising, audits, training, parts fulfillment
+- **PE-backed consolidator:** Unified 6 companies (Apollo, BDS, WhiteHawk, BTR, MAG, MaaS) + recent RMS acquisition (Minnesota-based, 80% single-retailer merchandising)
+- **4,140 W-2 field reps** nationwide (31 corporate staff) + RMS reps (count TBD)
+- **Hybrid services:** Break-fix, installations (5-15 person teams), merchandising, audits, training, parts fulfillment, experiential/activations
 - **Major retailers:** Target (1,900 stores/week), Best Buy, Walmart, Home Depot, CVS, 7-Eleven
 - **Brand clients:** LG, Samsung, Microsoft, AMD, Meta, L'Oreal, Fossil
 
@@ -80,8 +80,11 @@ OPEN SKY PLATFORM
 - ✅ **Data integration architecture:** SFTP → S3 staging → Snowflake (central ETL provider) → Tableau/PowerBI
 - ✅ **Snowflake sources:** OpenSky operational data + client POS data + ADP HR reports + third-party site data (geospatial, demographics, retail traffic) + Mars (third-party labor)
 - ✅ **Mars system:** Manages third-party labor (contractors/partners), tracks hours, handles invoicing/billing, NOT integrated into OpenSky employee workflows
+- ✅ **RMS "Portal" system:** Recent acquisition (Minnesota-based), 80% merchandising for single retailer, homegrown system NOT integrated with OpenSky (payroll migrated to ADP, full OpenSky migration delayed)
 - ✅ **Freshdesk system:** Support center ticketing (phone/chat), handles internal employee support + external client-facing issues, NOT automated with OpenSky (account teams manually upload issues)
 - ✅ **Break/Fix operations:** Field technicians maintain interactive displays, collaborate live with support center, parts ship directly to stores
+- ✅ **Travel Management:** Travel requests initiated in OpenSky, booking done in "Agency" (Amex) portal by managers/travel agents, NOT integrated back to OpenSky
+- ✅ **Experiential/Activations:** Billable work (events, brand activations), mechanics happen OUTSIDE OpenSky today, desire to bring into platform
 - ✅ **Client data sharing:** File extracts (CSV), legacy API gateways, modern APIs (migration in progress)
 - ✅ **Reporting:** Tableau (client portals, limited access due to licensing), PowerBI (internal ops)
 - ✅ **Communication:** SmarterMail (part-time staff, avoids Microsoft E3 license costs), ARSCONNECT.COM email (corporate), Go Happy (bidirectional mass campaigns)
