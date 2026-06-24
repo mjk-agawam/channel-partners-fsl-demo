@@ -9,16 +9,20 @@
 
 ### 1. Field Ride-Alongs
 
-**Timing:** Week after next (tentative)
+**Timing:** Week after next (confirmed)
 
 **Locations:**
-- **Irvine, CA:** Merchandising or break-fix rep (1 full day)
-- **Dallas, TX:** Different LOB or geography validation (1 full day)
+- **Dallas, TX:** Primary field engagement location (1 full day)
+- **Irvine/Orange County, CA:** Secondary field engagement location (1 full day)
 
 **Purpose:**
+> "To ensure technical solutions align with user experience, the team finalized plans for field ride-alongs in the Dallas and Irvine/Orange County areas. These sessions aim to give stakeholders firsthand insight into day-to-day workflows and UI/UX needs."
+
+**Specific Objectives:**
 - Salesforce (and/or partner) shadows field rep for full workday
 - Observe real workflows, environmental constraints, customer interactions
 - See mobile app usage, photo capture, parts verification, time tracking
+- **UI/UX focus:** Identify friction points in current mobile workflow that FSL Mobile must address
 - Understand pain points firsthand (not just system screenshots)
 
 **Attendees:**
@@ -32,14 +36,24 @@
 
 ---
 
-### 2. Reverse Demo 2.0
+### 2. Reverse Demo 2.0 with KPI Definition
 
 **Timing:** Wednesday (specific date TBD)
 
 **Purpose:**
 - Channel Partners demonstrates current workflows to Salesforce
 - Salesforce sees OpenSky, Project Center, manager spreadsheets in action
+- **PRIMARY FOCUS:** Isolate and define specific KPIs that will serve as project "North Star"
 - Better understanding of pain points → More accurate FSL demo scenarios
+
+**KPI Definition Priority:**
+> "The team shifted focus to preparing for the second reverse demo, prioritizing the isolation of specific KPIs. They agreed that defining these metrics is critical to preventing scope creep and establishing a shared 'North Star' for the project's success."
+
+**Critical Success Factor:**
+- Define measurable KPIs BEFORE technical design
+- Prevents feature creep ("this would be nice" vs. "this moves our KPI")
+- Provides clear success criteria (Did we hit KPI targets? Yes/No)
+- Aligns all stakeholders on what "success" means
 
 **Format:**
 - Screen share of OpenSky (rep scheduling, manager assignment, survey completion)
@@ -53,18 +67,47 @@
 
 **Duration:** 2 hours
 
-**Deliverable:**
-- Salesforce produces pain point → FSL feature mapping document
-- Prioritized list of "must have" vs. "nice to have" features
+**Deliverables:**
+1. **Defined KPIs (Priority #1):**
+   - 5-7 core KPIs that define project success
+   - Current baseline for each KPI (today's performance)
+   - Target improvement for each KPI (post-FSL goal)
+   - Timeline to achieve targets (Phase 1? Phase 2? Full rollout?)
+   
+2. **Pain Point → FSL Feature Mapping:**
+   - Each pain point tied to specific KPI
+   - Each FSL feature tied to KPI improvement
+   - Prioritized: "must have" (moves KPI) vs. "nice to have" (doesn't move KPI)
+
+**Example KPI Framework:**
+
+| KPI | Baseline (Today) | Target (Post-FSL) | Timeline | Primary FSL Feature |
+|-----|------------------|-------------------|----------|---------------------|
+| **Go-back rate** | 10% | <5% | Phase 2 (Month 6) | Real-time parts tracking + pre-arrival checklist |
+| **Manager scheduling time** | 12 hrs/week | <3 hrs/week | Phase 1 (Month 3) | Einstein Scheduling |
+| **Rep utilization** | 75% | 85% | Phase 3 (Month 12) | Capacity visibility + cross-training |
+| **Overtime %** | 10% | <5% | Phase 2 (Month 6) | Capacity-based scheduling |
+| **Client NPS** | 42 | >50 | Phase 3 (Month 12) | Experience Cloud portals |
+| **Data trust score** | 3/10 | 8/10 | Phase 1 (Month 3) | Single source of truth (Work Order) |
+| **System adoption** | N/A | >80% | Phase 4 (Month 18) | Change management program |
 
 ---
 
-### 3. Leadership Alignment on Value Story
+### 3. Leadership Alignment on Value Story & Organization Modeling
 
 **Timing:** Before Reverse Demo 2.0 (this week or early next week)
 
 **Purpose:**
 > "The team focused on ensuring leadership alignment on the 'value story' and KPIs before the session."
+
+**Additional Focus - Future-State Organization Modeling:**
+> "The team agreed to model future headcount based on roles and total resource needs rather than current, siloed line-of-business structures."
+
+**Why This Matters:**
+- Current headcount (500 merchandising reps, 500 break-fix reps) assumes dedicated roles
+- Future state (cross-trained multi-tactic reps) requires different org structure
+- Must model future needs BEFORE implementing Salesforce (avoid over-hiring or under-hiring)
+- Informs change management plan (who gets retrained? who stays in dedicated role?)
 
 **What Needs Alignment:**
 
@@ -102,7 +145,10 @@
 - 90-minute executive session (no Salesforce, internal only)
 - Attendees: CEO, CFO, COO, CTO (Jay), Stephen
 - Facilitator: Stephen (as Salesforce sponsor)
-- Output: One-page "Value Story" document with agreed KPIs, prioritized pain points, ROI targets, change management commitments
+- Outputs:
+  1. One-page "Value Story" document with agreed KPIs, prioritized pain points, ROI targets, change management commitments
+  2. Future-state organization model (roles, headcount, reporting structure based on capacity needs, not LOB silos)
+  3. Standardization commitment (are we willing to say "No" to custom client requests that hurt KPIs?)
 
 ---
 
@@ -202,9 +248,50 @@
 
 ## Medium-Term Actions (Months 2-3)
 
-### 7. Finalize Value Story & Cost Estimate
+### 7. Executive Leadership Review (Early-to-Mid July)
 
-**Timing:** Month 2 (after field ride-alongs, Reverse Demo 2.0, AI workshop if done)
+**Timing:** Early-to-mid July (targeting leadership meeting with Jim)
+
+**Purpose:**
+> "The team is targeting an early-to-mid July meeting with leadership (Jim) to present a high-level update. This update will include the project roadmap, a directional cost range, and the proposed value story."
+
+**Attendees:**
+- **Channel Partners:** Jim (CEO or senior leadership), CFO, COO, CTO (Jay), Stephen
+- **Salesforce:** AE, SA (present findings, answer questions)
+
+**Presentation Content:**
+
+**1. Project Roadmap (High-Level):**
+- Phased rollout approach (4 phases over 18 months)
+- Phase 1 pilot (100 reps, Month 3)
+- Full rollout (4,140 reps, Month 18)
+- OpenSky decommission timeline
+
+**2. Directional Cost Range:**
+- 3-year TCO: $26-28M (range, not final quote)
+- Year 1 investment: $10-12M (licenses + implementation)
+- Ongoing: $7-8M/year (licenses + support)
+- CapEx vs OpEx options (for CFO planning)
+
+**3. Value Story:**
+- Defined KPIs with baseline → target improvements
+- ROI quantification: $142M/year benefit vs $7.75M/year cost = 18:1 ROI
+- Payback: 2 months
+- Risk mitigation: Change management plan, phased rollout, Program Director oversight
+
+**4. Next Steps:**
+- Decision gate: Proceed to detailed planning? (Go/No-Go)
+- If Go: Partner selection (Weeks 3-4), AI workshop (Month 2), Phase 1 kickoff (Month 3)
+
+**Deliverable:**
+- Executive decision: Proceed with Salesforce FSL implementation? (Go/No-Go)
+- Budget commitment: Allocate funds for Phase 1 pilot ($2-3M)
+
+---
+
+### 8. Finalize Value Story & Cost Estimate (Post-Leadership Review)
+
+**Timing:** Month 2 (after field ride-alongs, Reverse Demo 2.0, AI workshop if done, leadership review)
 
 **Purpose:**
 - Refine ROI model with validated assumptions (not hypothesis)
@@ -234,14 +321,61 @@
 
 ---
 
-### 8. Begin Implementation (If Approved)
+### 9. Implementation Schedule Planning (Work Backward from Go-Live)
 
-**Timing:** Month 3 (if decision made in Month 2)
+**Timing:** Post-leadership review (if approved)
+
+**Purpose:**
+> "The team plans to work backward from a proposed mid-next year 'go-live' date to create a realistic implementation schedule, with follow-ups scheduled via email and existing project trackers."
+
+**Target Go-Live:** Mid-2027 (18 months from now, full rollout complete)
+
+**Work Backward Timeline:**
+
+| Milestone | Date | Months Until Go-Live |
+|-----------|------|----------------------|
+| **Full rollout complete (4,140 reps)** | Mid-2027 | 0 |
+| **Phase 4 start (construction, RMS, Mars)** | January 2027 | -6 |
+| **Phase 3 start (installations, audits, travel mgmt)** | July 2026 | -12 |
+| **Phase 2 start (break-fix, Freshdesk, WMS integration)** | April 2026 | -14 |
+| **Phase 1 start (pilot 100 reps)** | January 2026 | -18 |
+| **Implementation kickoff** | December 2025 | -19 |
+| **Partner selection** | November 2025 | -20 |
+| **Executive approval** | October 2025 | -21 |
+| **Leadership review (with Jim)** | Early-mid July 2025 | -24 |
+| **Reverse Demo 2.0 + KPI definition** | Late June 2025 | -24 |
+| **TODAY** | June 24, 2025 | -24 |
+
+**Critical Path Dependencies:**
+- Can't start implementation until partner selected (1 month selection process)
+- Can't start Phase 2 until Phase 1 validates approach (3-month pilot)
+- Can't achieve full rollout until all phases complete (18 months cumulative)
+
+**Risk Buffer:**
+- 18-month timeline is aggressive (typical FSL implementations: 24-36 months for 4,000+ users)
+- Recommend 3-month buffer (full rollout September 2027 vs. June 2027)
+- Accounts for: Change management delays, integration complexity, RMS/Mars complications
+
+**Action Tracking:**
+> "Follow-ups scheduled via email and existing project trackers."
+
+**Recommended Tracking Approach:**
+- Weekly status emails (Salesforce AE → Jay/Stephen): Progress, blockers, decisions needed
+- Bi-weekly steering committee (30 min): Jay, Stephen, Salesforce AE, Partner PM (once engaged)
+- Monthly executive dashboard: KPI progress, budget vs actual, timeline status (Red/Yellow/Green)
+- Use existing project tracker (Asana? Jira? Monday.com?) to log tasks, owners, due dates
+
+---
+
+### 10. Begin Implementation (If Approved)
+
+**Timing:** Month 3 (December 2025 if leadership approves in July)
 
 **Phase 1 Kickoff:**
 - Sign Salesforce contract (licenses + professional services)
 - Sign partner contract (if hybrid model chosen)
 - Hire/contract Program Director ("CTO role" for oversight)
+  > "Stephen recommended creating a 'CTO role'—an onsite, technical oversight consultant—to bridge communication between the company, Salesforce, and the implementation partner, ensuring accountability and technical governance."
 - Identify pilot team (100 reps, single LOB, single geography)
 - Schedule Phase 1 kickoff meeting (Salesforce + Partner + Channel Partners)
 
@@ -250,7 +384,10 @@
 ## Change Management: Non-Negotiables
 
 **Quote (paraphrased):**
-> "Participants reiterated that technical implementation is secondary to user adoption. They acknowledged that successful digital transformation requires cultural shifts, as the technology will fail if the team resists standardized processes or continues to rely on legacy manual workflows."
+> "Participants reiterated that successful digital transformation relies more on organizational adoption than software functionality. They identified a need to move away from a culture of customization toward standardized processes, noting that leadership must actively enforce this shift to achieve efficiency."
+
+**Core Principle:**
+> "Technical implementation is secondary to user adoption. The technology will fail if the team resists standardized processes or continues to rely on legacy manual workflows."
 
 ---
 
@@ -337,15 +474,27 @@
 
 | Timeframe | Action | Owner | Deliverable |
 |-----------|--------|-------|-------------|
-| **This Week** | Leadership alignment on value story/KPIs | Stephen + Jay | One-page Value Story doc |
+| **This Week** | Leadership alignment (value story, KPIs, org modeling) | Stephen + Jay | Value Story doc + future-state org model |
 | **This Week** | Start data foundation (photos, go-backs, baselines) | Kari | Updated OpenSky surveys, baseline dashboard |
-| **Week After Next** | Field ride-alongs (Irvine, Dallas) | Salesforce SA | Field observations report |
-| **Week After Next** | Reverse Demo 2.0 | Jay + Kari | Pain point → FSL feature mapping |
+| **Week After Next** | Field ride-alongs (Dallas, Irvine/Orange County) | Salesforce SA | Field observations + UI/UX recommendations |
+| **Week After Next** | Reverse Demo 2.0 + KPI definition | Jay + Kari | **Defined KPIs** (North Star) + pain point mapping |
 | **Weeks 3-4** | AI Use Case Workshop (optional) | Salesforce AI team | Prioritized AI roadmap, POC plan |
 | **Weeks 3-4** | Partner selection (if hybrid model) | Jay + Stephen | Partner SOW signed |
-| **Month 2** | Finalize value story & cost estimate | Salesforce AE | Executive decision-ready package |
-| **Month 2** | Executive decision meeting | CEO + CFO + COO | Go/No-Go decision |
-| **Month 3** | Phase 1 kickoff (if approved) | Program Director | Pilot team identified, kickoff meeting scheduled |
+| **Early-Mid July** | **Executive leadership review (with Jim)** | Salesforce AE + Jay + Stephen | **Go/No-Go decision** + budget commitment |
+| **Month 2 (Aug)** | Finalize value story & cost estimate (post-review) | Salesforce AE | Executive decision-ready package |
+| **Month 3 (Dec)** | Implementation kickoff (if approved) | Program Director ("CTO role") | Phase 1 pilot start |
+| **Mid-2027** | **Target full rollout (4,140 reps)** | Program Director | OpenSky decommissioned |
+
+**Critical Path:**
+- KPI definition (Reverse Demo 2.0) → Informs value story → Drives leadership decision (July)
+- Leadership approval (July) → Partner selection → Phase 1 kickoff (December)
+- Work backward from mid-2027 go-live → 18-month implementation timeline (aggressive, recommend 21-month buffer)
+
+**Action Tracking:**
+- Weekly status emails (Salesforce AE → Jay/Stephen)
+- Bi-weekly steering committee (30 min, once partner engaged)
+- Monthly executive dashboard (KPI progress, budget, timeline Red/Yellow/Green)
+- Use existing project tracker for task/owner/due date management
 
 ---
 

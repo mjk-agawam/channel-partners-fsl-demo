@@ -366,10 +366,20 @@ If these 5 themes are solved:
 - CRITICAL: Needs validation with actual data
 
 **Implementation Oversight:**
-- ✅ **"CTO Role" proposal:** Embedded Program Director to bridge company/Salesforce/partner, ensure accountability, sit onsite, interface with all parties
+- ✅ **"CTO Role" proposal:** Embedded Program Director to bridge company/Salesforce/partner, ensure accountability and technical governance, sit onsite, interface with all parties
 - ✅ **Team composition flexibility:** Explored offshore vs onsite resource mix (feasibility uncertain), typical models: 80/20 onsite-heavy ($200-250/hr), 20/80 offshore-heavy ($100-150/hr), 50/50 hybrid ($150-200/hr)
 - ✅ **Financial structuring:** Differentiate licensing (OpEx) vs implementation services (CapEx-eligible), optimize for P&L impact, split platform build ($2.5M CapEx amortized 5 years) vs training ($700K OpEx Year 1)
 - ✅ **AI initiative workshop:** Week-long program with specialized staff onsite to identify/develop AI use cases, available pre-purchase, $50K-100K cost (often free/discounted in FSL deal), deliverable is prioritized AI roadmap with POC plan
+
+### Next Steps & Strategic Alignment
+**ANSWERED:**
+- ✅ **Reverse Demo 2.0 focus:** Prioritize isolation of specific KPIs as project "North Star" to prevent scope creep, define measurable success criteria
+- ✅ **Field engagement:** Dallas and Irvine/Orange County ride-alongs to ensure technical solutions align with user experience, focus on day-to-day workflows and UI/UX needs
+- ✅ **Culture shift requirement:** Move away from customization culture toward standardized processes, leadership must actively enforce shift to achieve efficiency
+- ✅ **Future-state planning:** Model headcount based on roles and total resource needs (not current siloed LOB structures), inform change management and training plans
+- ✅ **Executive review:** Early-to-mid July meeting with leadership (Jim) for high-level update including project roadmap, directional cost range, proposed value story
+- ✅ **Implementation timeline:** Work backward from mid-2027 target go-live date, create realistic 18-month schedule (recommend 21-month with buffer), track via email and existing project trackers
+- ✅ **Action tracking approach:** Weekly status emails, bi-weekly steering committee, monthly executive dashboard (KPI progress, budget vs actual, timeline Red/Yellow/Green)
 
 ---
 
