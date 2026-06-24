@@ -139,9 +139,11 @@ Call Form (Project)
 - Offer letter generation
 - Service integration capabilities
 
-**GAMS (Gems) - Payroll Middleware:**
+**GAMS (Gems) - Payroll & Incentive Middleware:**
 - **Unique ID generation:** Enterprise-wide ID assignment (solves cross-country ADP file number conflicts)
 - **Payroll aggregation:** Overtime + regional calculations before ADP export
+- **Incentive/commission calculations:** Third-party application for comp calculations
+- **SmarterMail account trigger:** Creates SmarterMail accounts for part-time staff
 - **Data integration:** Middle layer between internal systems and ADP
 
 **ADP (Payroll System):**
@@ -158,7 +160,7 @@ Call Form (Project)
 **Flow:**
 ```
 iCIMS (recruit/hire) 
-  → GAMS (assign enterprise ID, aggregate payroll) 
+  → GAMS (assign enterprise ID, aggregate payroll, calculate incentives, trigger SmarterMail) 
     → ADP (process payroll) 
       → AWS (step functions) 
         → OpenSky (profiles, teams, hierarchies)
@@ -231,6 +233,11 @@ iCIMS (recruit/hire)
 
 **ETL Frequency:** 4 times per day
 
+**Data Integration Architecture:**
+- **SFTP + S3 buckets:** Data staged in S3 buckets for integration
+- **Snowflake:** Central ETL provider for processing and repository storage
+- **Flow:** Source systems → SFTP → S3 staging → Snowflake (ETL) → Tableau/PowerBI
+
 **Snowflake Data Sources (Beyond OpenSky):**
 1. **Client POS data:** Via client API integrations (Samsung, LG, etc.)
 2. **ADP HR reports:** Payroll/personnel data
@@ -239,6 +246,7 @@ iCIMS (recruit/hire)
    - Demographics
    - Retail traffic (e.g., Best Buy foot traffic)
    - Location insights
+4. **Mars system data:** Third-party labor management (see below)
 
 **Tableau Output:**
 - Client portals (company-controlled data models)

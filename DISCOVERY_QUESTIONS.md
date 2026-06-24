@@ -74,9 +74,12 @@ OPEN SKY PLATFORM
 ```
 
 **Data Flow Details:**
-- ✅ **Employee lifecycle:** iCIMS → GAMS (unique ID assignment) → ADP → AWS → OpenSky
+- ✅ **Employee lifecycle:** iCIMS → GAMS (unique ID assignment + incentive calculations + SmarterMail trigger) → ADP → AWS → OpenSky
+- ✅ **GAMS expanded role:** Third-party application for incentive/commission calculations, payroll aggregation, creates SmarterMail accounts for part-time staff
 - ✅ **WMS landscape:** 3 systems (Project Center homegrown, Sphere third-party, Launch third-party) → consolidation planned with API gateway/proxy layer to protect Samsung integrations
-- ✅ **Snowflake sources:** OpenSky operational data + client POS data + ADP HR reports + third-party site data (geospatial, demographics, retail traffic)
+- ✅ **Data integration architecture:** SFTP → S3 staging → Snowflake (central ETL provider) → Tableau/PowerBI
+- ✅ **Snowflake sources:** OpenSky operational data + client POS data + ADP HR reports + third-party site data (geospatial, demographics, retail traffic) + Mars (third-party labor)
+- ✅ **Mars system:** Manages third-party labor (contractors/partners), tracks hours, handles invoicing/billing, NOT integrated into OpenSky employee workflows
 - ✅ **Client data sharing:** File extracts (CSV), legacy API gateways, modern APIs (migration in progress)
 - ✅ **Reporting:** Tableau (client portals, limited access due to licensing), PowerBI (internal ops)
 - ✅ **Communication:** SmarterMail (part-time staff, avoids Microsoft E3 license costs), ARSCONNECT.COM email (corporate), Go Happy (bidirectional mass campaigns)
@@ -599,7 +602,32 @@ OPEN SKY PLATFORM
 
 ---
 
-## 12. Open Discussion
+## 12. Mars Third-Party Labor System
+
+**ANSWERED:**
+- ✅ **Mars system purpose:** Manages third-party labor (contractors/partners) for projects where Channel Partners does not have market coverage
+- ✅ **Mars functionality:** Track hours, handle invoicing/billing for partner work
+- ✅ **Separation:** NOT integrated into main OpenSky employee workflows
+- ✅ **Data flow:** Mars → SFTP → S3 → Snowflake → Tableau (for combined reporting)
+- ✅ **Partner data gap:** Partner call form data does NOT flow automatically into OpenSky today (manual export/import from Mars)
+
+**Questions:**
+- Which vendor/platform is Mars? (Custom-built? Third-party?)
+- How many third-party contractors managed in Mars? (Dozens? Hundreds? Thousands?)
+- What % of field work is done by contractors vs. W-2 employees?
+- Do contractors use mobile apps to complete work? Or just time tracking?
+- Do contractors complete surveys/call forms like W-2 reps?
+- How is quality controlled for contractor work? (Same QA process as W-2?)
+- What's the invoicing process? (Partner bills CP, CP bills client?)
+- Are contractors ever assigned to same projects as W-2 reps? (Mixed teams?)
+- Timeline for Mars replacement or integration with OpenSky?
+- If Salesforce replaced OpenSky, would you also replace Mars?
+- Could MuleSoft integrate Mars → Salesforce if Mars stays?
+- Would Experience Cloud guest access work for third-party partner reps?
+
+---
+
+## 13. Open Discussion
 
 **Questions for us:**
 - Based on the June 18 demo, what did we NOT cover that you need to understand?
