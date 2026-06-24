@@ -196,6 +196,523 @@
 
 ---
 
+## Implementation Oversight: "CTO Role" for Accountability
+
+### Stephen's Proposal
+
+**Quote (paraphrased):**
+> "Stephen proposed a 'CTO role' as an oversight position to bridge the gap between the company, Salesforce, and the implementation partner. This individual would sit onsite, interface with Salesforce, and ensure the partner team remains accountable and efficient."
+
+**Role Definition:**
+- **Title:** Implementation Program Director (or "Embedded CTO")
+- **Reporting:** Reports to Jay (Channel Partners CTO)
+- **Duration:** Full-time during implementation (18 months), transition to part-time post-launch
+- **Location:** Onsite at Channel Partners HQ (not remote, not partner office)
+
+---
+
+### Responsibilities
+
+**1. Bridge Between Three Parties:**
+- **Channel Partners:** Represents business needs, translates to technical requirements
+- **Salesforce:** Interfaces with AE/SA/CSM, escalates issues, validates architecture decisions
+- **Partner:** Manages day-to-day delivery, ensures quality, holds partner accountable
+
+**Daily Activities:**
+- Stand-up with partner team (remote or onsite): What shipped yesterday? What's blocked?
+- Weekly check-in with Jay/Kari: Progress, risks, decisions needed
+- Bi-weekly with Salesforce: Architecture review, product roadmap alignment, escalation path
+- Monthly steering committee: CFO, COO, Jay, Stephen → ROI tracking, phase gate decisions
+
+---
+
+**2. Ensure Partner Accountability:**
+
+**Without Oversight Role:**
+- Partner says "we're on track" (but silently slipping schedule)
+- Channel Partners discovers delay 2 months later (too late to course-correct)
+- Partner blames Salesforce ("platform limitation"), Salesforce blames partner ("poor implementation")
+- Channel Partners stuck in middle, project fails
+
+**With Oversight Role:**
+- Program Director reviews partner's daily commits (code, config, documentation)
+- Spots issues early ("this integration is too fragile, refactor now")
+- Escalates to partner leadership if quality slips ("your offshore team needs more FSL training")
+- Provides air cover for Jay ("I'm watching partner closely, they're performing well")
+
+---
+
+**3. Maintain Efficiency:**
+
+**Common Inefficiencies:**
+- Partner spins wheels on wrong solution (building custom feature that FSL already has out-of-box)
+- Partner waits for Channel Partners feedback (requirements unclear, waiting days for answer)
+- Partner blocked on Salesforce support ticket (P3 ticket sitting in queue for weeks)
+
+**Program Director Interventions:**
+- Technical review: "Stop building custom. Use FSL OOTB feature X instead."
+- Requirements clarification: "I'll get you an answer from business in 2 hours, not 2 days."
+- Salesforce escalation: "Upgrade this ticket to P1, blocking go-live."
+
+**Result:**
+- Partner team 20-30% more productive (less rework, fewer blockers, faster decisions)
+- Timeline compression: 18 months → 15 months (3-month savings)
+- Cost savings: 3 months × partner burn rate $200K/month = **$600K saved**
+
+---
+
+### Ideal Candidate Profile
+
+**Background:**
+- 10+ years Salesforce implementation experience (architect-level, not just admin)
+- FSL expert (deployed FSL at 3+ companies, 1,000+ users scale)
+- Field service domain knowledge (ideally retail, CPG, or merchandising)
+- Program/project management experience (led $5M+ implementations)
+
+**Skills:**
+- Technical: Can review Apex code, validate architecture, debug integrations
+- Business: Can translate business requirements to technical specs
+- Communication: Can bridge technical/non-technical stakeholders
+- Leadership: Can manage without authority (influence partner, not direct reports)
+
+**Personality:**
+- **Assertive:** Comfortable challenging partner ("your approach is wrong, redo it")
+- **Diplomatic:** Can escalate without burning relationships
+- **Detail-oriented:** Reviews daily progress, doesn't accept "trust me, it's fine"
+- **Pragmatic:** Balances perfect vs. good enough (scope control)
+
+---
+
+### Sourcing Options
+
+**Option 1: Hire Full-Time Employee**
+- **Pros:** Fully dedicated, builds institutional knowledge, stays post-launch
+- **Cons:** Hard to find (rare skillset), expensive ($200K+ salary), may not need full-time post-launch
+- **Timeline:** 2-3 months to hire (too slow for immediate start)
+
+**Option 2: Contract Through Salesforce**
+- **Pros:** Salesforce vouches for quality, fast start (2-4 weeks)
+- **Cons:** Expensive ($250-$300/hour), Salesforce consultant loyalty (may favor Salesforce over Channel Partners)
+- **Cost:** $250/hour × 40 hours/week × 78 weeks (18 months) = **$780K**
+
+**Option 3: Contract Through Partner**
+- **Pros:** Partner provides oversight (conflicts of interest, can't oversee themselves)
+- **Cons:** Defeats purpose (can't hold partner accountable if partner paying the overseer)
+- **Verdict:** ❌ Don't do this
+
+**Option 4: Independent Consultant**
+- **Pros:** Neutral third party, no conflicts, experienced with multiple partners/implementations
+- **Cons:** Must vet carefully (check references, validate FSL expertise)
+- **Cost:** $200/hour × 40 hours/week × 78 weeks = **$624K**
+
+**Option 5: Fractional Consulting Firm**
+- **Pros:** Bench strength (backup if primary consultant unavailable), firm reputation
+- **Cons:** Slightly more expensive than independent
+- **Cost:** $225/hour × 40 hours/week × 78 weeks = **$702K**
+
+**Recommendation:** Option 4 or 5 (Independent or Fractional Firm)
+- Cost-effective vs. Salesforce consultant
+- No conflicts vs. Partner-provided
+- Fast start vs. FTE hire
+- Ask Salesforce AE for independent FSL consultant referrals
+
+---
+
+## Team Composition: Offshore vs. Onsite Resource Mix
+
+### Discussion Context
+
+**Quote (paraphrased):**
+> "They explored the possibility of customizing the implementation team's makeup, specifically regarding the ratio of offshore versus onsite resources, though the feasibility of this flexibility remains uncertain."
+
+---
+
+### Standard Partner Team Models
+
+**Model 1: Onsite-Heavy (Accenture, Deloitte)**
+- 80% onsite (at Channel Partners HQ or partner office in US)
+- 20% offshore (India, Philippines, Eastern Europe)
+- **Cost:** $200-$250/hour blended rate
+- **Pros:** Face-to-face collaboration, fast communication, cultural alignment
+- **Cons:** Expensive, partner may have capacity constraints (limited onsite consultants available)
+
+**Model 2: Offshore-Heavy (Persistent, Tech Mahindra, Infosys)**
+- 20% onsite (architect, PM, leads)
+- 80% offshore (India delivery center)
+- **Cost:** $100-$150/hour blended rate
+- **Pros:** Cost-effective (50% cheaper), large bench (easy to scale up/down)
+- **Cons:** Time zone challenges (8-10 hour delay), communication overhead, less domain knowledge
+
+**Model 3: Hybrid (Most Common)**
+- 50% onsite, 50% offshore
+- Onsite: Architect, PM, functional leads, training team
+- Offshore: Developers, QA testers, configuration, documentation
+- **Cost:** $150-$200/hour blended rate
+- **Pros:** Balances cost and collaboration
+- **Cons:** Coordination overhead (daily standups at 6am PT to catch India EOD)
+
+---
+
+### Channel Partners' Customization Needs
+
+**Factors to Consider:**
+
+**1. Complexity of Requirements:**
+- High complexity (custom integrations, custom mobile components, AI features) → Need more onsite (face-to-face design sessions)
+- Low complexity (OOTB FSL, standard configs) → Can use more offshore (follow documented patterns)
+
+**2. Change Management Intensity:**
+- High change management needs (train 4,140 reps, ride-alongs, go-live support) → Need onsite (in-person training, on-site go-live war room)
+- Low change management (small pilot, tech-savvy users) → Can use more offshore (remote training, remote support)
+
+**3. Timeline Pressure:**
+- Fast timeline (12 months aggressive) → Need more onsite (reduce communication delays)
+- Standard timeline (18-24 months) → Can use more offshore (time to iterate across time zones)
+
+**4. Budget Constraints:**
+- Limited budget ($2M implementation) → Need more offshore (cost-effective)
+- Flexible budget ($5M+ implementation) → Can use more onsite (optimize for speed/quality)
+
+---
+
+### Recommended Mix for Channel Partners
+
+**Phase 1: Pilot (Months 1-3)**
+- **70% onsite:** Architect, PM, 2 functional leads, training lead (face-to-face with 100 pilot reps)
+- **30% offshore:** 2 developers, 1 QA tester (build integrations, test)
+- **Rationale:** High touch needed for pilot success, establish patterns for later phases
+
+**Phase 2-3: Scale (Months 4-12)**
+- **40% onsite:** Architect (part-time), PM, 1 functional lead (oversight, training)
+- **60% offshore:** 4 developers, 2 QA testers, 2 config specialists (scale configurations, integrations)
+- **Rationale:** Patterns established, offshore can execute, onsite provides direction
+
+**Phase 4: Full Rollout (Months 13-18)**
+- **50% onsite:** PM, training team (3 people), go-live support (war room)
+- **50% offshore:** Developers, QA (bug fixes, enhancements)
+- **Rationale:** Training intensive phase (need onsite for field training), but most build complete
+
+---
+
+### Negotiation Strategy
+
+**What Partners Can Flex:**
+- Ratio of onsite/offshore (within limits of their delivery model)
+- Specific roles onsite (e.g., "must have architect onsite 3 days/week minimum")
+- Location of onsite resources (Channel Partners HQ vs. partner office vs. remote)
+
+**What Partners Can't Flex:**
+- Total cost below their margin threshold (partners won't do unprofitable deals)
+- Quality of offshore team (can't demand "only senior offshore," offshore team is mix of junior/mid/senior)
+- Time zone (offshore is offshore, can't change India to US time zone)
+
+**How to Negotiate:**
+
+**Option A: Fixed Price with Specified Mix**
+- "We'll pay $3M fixed price for 18-month implementation, but we require 50% onsite minimum."
+- Partner adjusts their margin or offshore cost structure to fit
+- Risk: Partner may cut corners elsewhere (fewer hours, junior staff)
+
+**Option B: Time & Materials with Rate Card**
+- Partner provides rate card: Onsite $250/hour, Offshore $125/hour
+- Channel Partners decides mix: "This month we need 80% onsite (design phase), next month 20% onsite (build phase)"
+- Risk: Total cost unpredictable, could overspend
+
+**Option C: Phased with Flex (Recommended)**
+- Fixed price per phase (Phase 1 = $600K, Phase 2 = $900K, etc.)
+- Partner commits to minimum onsite % per phase (Phase 1 = 70%, Phase 2 = 40%)
+- Channel Partners can request more onsite (pay delta: $250/hr onsite - $125/hr offshore = $125/hr premium)
+- Example: Phase 2 budgeted for 40% onsite, Channel Partners wants 50% onsite → Pay $125/hr × 160 hours (10% of 1,600-hour phase) = $20K upcharge
+
+---
+
+## Financial Structuring: CapEx vs. OpEx
+
+### Jay's Question
+
+**Quote (paraphrased):**
+> "Jay inquired about structuring implementation contracts to differentiate between licensing and consulting fees, aiming to optimize for capital expenditure versus operational expenditure accounting."
+
+---
+
+### Accounting Context
+
+**CapEx (Capital Expenditure):**
+- One-time investment in long-term asset
+- Amortized over useful life (typically 3-5 years for software)
+- Shows up on balance sheet (asset), not P&L (expense) in Year 1
+- **CFO prefers CapEx:** Makes Year 1 P&L look better (lower expenses → higher profit)
+
+**OpEx (Operational Expenditure):**
+- Recurring expense, consumed within year
+- Full cost hits P&L in year incurred
+- No balance sheet impact
+- **CFO prefers OpEx:** For recurring costs (licenses, support), predictable, easier to budget
+
+---
+
+### How Salesforce Deals Are Typically Structured
+
+**Licenses (Almost Always OpEx):**
+- Salesforce licenses are subscription (monthly or annual)
+- Accounting standard: Recognize as OpEx in year consumed
+- **Can't capitalize licenses** (no perpetual ownership, no asset created)
+- FSL: $7.65M/year → $7.65M OpEx per year (for 3 years)
+
+**Implementation Services (Can Be CapEx):**
+- One-time consulting to configure, integrate, train
+- Creates "internal-use software asset" (configured Salesforce org)
+- **Can capitalize if:**
+  - Creates long-term value (multi-year benefit)
+  - Cost is significant ($1M+)
+  - Project reaches "development stage" (not just planning/training)
+- Implementation: $3.2M → $3.2M CapEx (amortized over 5 years = $640K/year expense)
+
+**Ongoing Support/Enhancements (OpEx):**
+- Annual managed services (AMS), partner retainer
+- Consumed within year, no long-term asset created
+- $100K/year AMS → $100K OpEx per year
+
+---
+
+### Optimization Strategies
+
+**Strategy 1: Maximize CapEx (Make Year 1 P&L Look Better)**
+
+**Structure:**
+- **Capitalize:** All implementation services ($3.2M)
+- **OpEx:** Licenses ($7.65M Year 1) + Ongoing ($100K Year 2+)
+
+**Year 1 Impact:**
+- P&L Expense: $7.65M (licenses) + $640K (amortization) = **$8.29M**
+- Balance Sheet: $3.2M asset (implementation), amortize $640K/year over 5 years
+- **Benefit:** $3.2M doesn't hit Year 1 P&L, spread over 5 years
+
+**Year 2-5 Impact:**
+- P&L Expense: $7.65M (licenses) + $640K (amortization) + $100K (AMS) = **$8.39M/year**
+
+**When to Use:**
+- Year 1 budget constrained (CFO says "can't spend more than $10M in Year 1")
+- Private equity wants strong Year 1 EBITDA (for exit valuation)
+- Public company wants to smooth expenses (avoid Year 1 spike)
+
+---
+
+**Strategy 2: Maximize OpEx (Simplify Accounting)**
+
+**Structure:**
+- **OpEx:** Everything (licenses + implementation + ongoing)
+- No capitalization
+
+**Year 1 Impact:**
+- P&L Expense: $7.65M (licenses) + $3.2M (implementation) = **$10.85M**
+- Balance Sheet: No asset
+
+**Year 2-5 Impact:**
+- P&L Expense: $7.65M (licenses) + $100K (AMS) = **$7.75M/year**
+
+**When to Use:**
+- CFO prefers simple (no amortization tracking, no asset impairment risk)
+- Tax optimization (OpEx deductible in Year 1, CapEx deducted over 5 years → worse cash flow)
+- Year 1 budget not constrained (can absorb $10.85M)
+
+---
+
+**Strategy 3: Hybrid (Split Implementation)**
+
+**Structure:**
+- **CapEx:** Core platform build ($2.5M - configuration, integrations, custom dev)
+- **OpEx:** Training, change management, go-live support ($700K - consumed immediately, no long-term asset)
+- **OpEx:** Licenses ($7.65M/year), Ongoing ($100K/year)
+
+**Year 1 Impact:**
+- P&L Expense: $7.65M (licenses) + $700K (training OpEx) + $500K (amortization) = **$8.85M**
+- Balance Sheet: $2.5M asset (platform build), amortize $500K/year over 5 years
+
+**Rationale:**
+- Training/change management doesn't create "asset" (can't resell trained employees)
+- Platform build does create asset (configured Salesforce org has multi-year value)
+- Most conservative approach (auditor-friendly)
+
+---
+
+### How to Structure Contract
+
+**Separate Line Items in SOW:**
+
+```
+STATEMENT OF WORK - CHANNEL PARTNERS FSL IMPLEMENTATION
+
+1. Salesforce Licenses (OpEx)
+   - FSL Licenses (4,140 users): $7,452,000/year
+   - Experience Cloud (500 users): $60,000/year
+   - Sales Cloud (50 users): $90,000/year
+   - Subtotal: $7,602,000/year (billed annually, 3-year commit)
+
+2. Implementation Services - Platform Build (CapEx-Eligible)
+   - Architecture & Design: $200,000
+   - Configuration & Development: $800,000
+   - Integration Development: $500,000
+   - Data Migration: $200,000
+   - Testing & QA: $300,000
+   - Subtotal: $2,000,000 (one-time, capitalize over 5 years)
+
+3. Implementation Services - Training & Change Mgmt (OpEx)
+   - Training Curriculum Development: $300,000
+   - Rep Training Delivery: $800,000
+   - Change Management: $400,000
+   - Go-Live Support: $200,000
+   - Subtotal: $1,700,000 (one-time, OpEx in Year 1)
+
+4. Ongoing Support (OpEx)
+   - Partner Managed Services (AMS): $100,000/year (Years 2-3)
+
+TOTAL 3-YEAR COST: $26,702,000
+- Year 1: $7,602,000 (licenses) + $2,000,000 (platform CapEx) + $1,700,000 (training OpEx) = $11,302,000
+- Year 2: $7,602,000 (licenses) + $100,000 (AMS) = $7,702,000
+- Year 3: $7,602,000 (licenses) + $100,000 (AMS) = $7,702,000
+```
+
+**Accounting Treatment:**
+- Year 1 P&L: $7,602,000 + $1,700,000 + $400,000 (CapEx amortization) = **$9,702,000**
+- Balance Sheet: $2,000,000 asset, depreciate $400K/year
+
+---
+
+### Tax Considerations
+
+**Section 174 R&D Capitalization (US Tax Law Change):**
+- Effective 2022+, software development costs must be capitalized for tax purposes (can't deduct immediately)
+- Amortized over 5 years (US) or 15 years (offshore development)
+- **Impact:** Even if Channel Partners wants to OpEx for book accounting, IRS requires CapEx for tax
+- **Result:** May create book/tax difference (OpEx on P&L, CapEx on tax return)
+- **Recommendation:** Consult Channel Partners' tax advisor, may prefer CapEx for both (simplifies)
+
+---
+
+## AI Initiative: Pre-Purchase Use Case Workshop
+
+### Stephen's Proposal
+
+**Quote (paraphrased):**
+> "Stephen suggested a week-long program where specialized staff could work onsite to help identify and develop AI use cases, which is an option available even prior to a formal software purchase."
+
+---
+
+### Workshop Structure
+
+**Format:**
+- **Duration:** 1 week (5 days)
+- **Location:** Channel Partners HQ (onsite, not remote)
+- **Team:** Salesforce AI specialists (Einstein experts, FSL + AI hybrid)
+- **Deliverable:** AI use case roadmap with prioritized recommendations
+
+---
+
+**Day 1: Discovery**
+- Meet with key stakeholders (Jay, Kari, Stephen, LOB managers, reps)
+- Understand current pain points (go-backs, scheduling, quality control, support center)
+- Review existing data (OpenSky database, Snowflake warehouse, survey photos, time entries)
+- Identify AI opportunities (where can ML/AI add value?)
+
+**Day 2: Use Case Brainstorming**
+- Workshop with cross-functional team (ops, IT, finance, reps)
+- Generate 20-30 potential AI use cases
+- Examples:
+  - Einstein Vision: Auto-QC for photo surveys
+  - Einstein Bot: Knowledge base chatbot
+  - Einstein Scheduling: Predictive go-back risk scoring
+  - Einstein Analytics: Margin forecasting by project type
+  - Einstein Discovery: Root cause analysis for overtime spikes
+
+**Day 3: Use Case Prioritization**
+- Score each use case on:
+  - **Business impact:** High (>$10M/year), Medium ($1M-$10M), Low (<$1M)
+  - **Technical feasibility:** Easy (OOTB Einstein), Medium (custom model), Hard (new AI tech)
+  - **Data readiness:** Ready (data exists, clean), Partial (data exists, needs cleanup), Not ready (data doesn't exist)
+  - **Time to value:** Quick (<6 months), Medium (6-12 months), Long (12+ months)
+- Prioritization matrix: High impact + Easy + Ready + Quick = **Priority 1**
+
+**Day 4: Proof of Concept (POC) Planning**
+- Select top 2-3 use cases for POC
+- Define success criteria (e.g., Einstein Vision must achieve >85% accuracy on QC pass/fail)
+- Identify data requirements (e.g., need 1,000 labeled "good" and "bad" installation photos)
+- Outline POC timeline (e.g., 8 weeks: 2 weeks data prep, 4 weeks model training, 2 weeks testing)
+
+**Day 5: Roadmap & Next Steps**
+- Present findings to executive team (CEO, CFO, CTO, COO)
+- Recommended roadmap:
+  - **Phase 1 (Months 1-6):** POC for Priority 1 use cases
+  - **Phase 2 (Months 7-12):** Production rollout of successful POCs
+  - **Phase 3 (Year 2):** Expand to Priority 2 use cases
+- Decision point: Proceed with POC? (Can do POC without buying FSL licenses)
+
+---
+
+### Benefits of Pre-Purchase Workshop
+
+**1. Validate AI Value Before Buying:**
+- Salesforce claims Einstein can save $13M/year (automated QC)
+- Workshop validates: Do we have right data? Is accuracy achievable? Will reps use it?
+- **Outcome:** High confidence in AI ROI → Easier to justify FSL purchase
+
+**2. No Long-Term Commitment:**
+- Workshop is standalone engagement (not tied to FSL purchase)
+- If workshop reveals AI won't work (bad data, low accuracy, cultural barriers) → Don't buy FSL, save $26M
+- Low cost to de-risk large investment
+
+**3. Build Internal Buy-In:**
+- Reps, managers see AI in action (real photos, real predictions)
+- Not just "Salesforce says AI will help," it's "We tested AI on our data, here's proof"
+- Accelerates adoption (people trust what they've seen)
+
+**4. Identify Quick Wins:**
+- Some AI use cases can launch in 3-6 months (Einstein Bot, Einstein Analytics dashboards)
+- Can deliver ROI BEFORE full FSL rollout completes (18 months)
+- Early wins build momentum for broader FSL adoption
+
+---
+
+### Workshop Cost
+
+**Typical Pricing:**
+- **Salesforce AI Workshop:** $50K-$100K (1 week, 2-3 specialists onsite)
+- **Included in FSL Deal:** Often Salesforce AE includes free/discounted workshop to win deal
+- **Standalone:** If Channel Partners wants workshop before committing to FSL, pay full price
+
+**Negotiation Strategy:**
+- Request free workshop as part of FSL evaluation ("We need to validate AI use cases before committing to $26M investment")
+- Salesforce AE likely agrees (small cost to Salesforce, high value to close deal)
+- Worst case: Pay $50K, get $13M+ ROI insight (0.4% of total deal size, worth it)
+
+---
+
+### Recommended Timing
+
+**Option 1: Workshop First, Then FSL Decision (Lower Risk)**
+1. Week 1: AI workshop
+2. Weeks 2-4: POC for top use case (e.g., Einstein Vision QC)
+3. Week 5: Present POC results to exec team
+4. Week 6: Decide: Proceed with FSL? (Yes if POC successful)
+
+**Option 2: Workshop During FSL Evaluation (Parallel Track)**
+1. Month 1: Reverse demo + field ride-alongs + AI workshop (all in parallel)
+2. Month 2: Salesforce delivers value story + POC results + cost estimate
+3. Month 3: Channel Partners decides: Proceed with FSL implementation?
+
+**Option 3: Workshop After FSL Commitment (Highest Risk)**
+1. Month 1: Commit to FSL implementation ($26M, 18 months)
+2. Month 2: AI workshop (discover data quality issues, low accuracy potential)
+3. Month 3: Realize AI ROI won't materialize → $13M of projected ROI disappears
+4. Problem: Already committed to FSL, can't back out
+
+**Recommendation:** Option 1 or 2 (de-risk AI assumptions before full commitment)
+
+---
+
+**End of Implementation Strategy Documentation (Updated)**
+
+
 ## Headcount Planning: Model Future State (Not Current Silos)
 
 ### Current State Problem

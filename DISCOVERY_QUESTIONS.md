@@ -358,6 +358,12 @@ If these 5 themes are solved:
 - **ROI: 18:1** (annual benefit $142M vs annual cost $7.75M, payback 2 months)
 - CRITICAL: Needs validation with actual data
 
+**Implementation Oversight:**
+- ✅ **"CTO Role" proposal:** Embedded Program Director to bridge company/Salesforce/partner, ensure accountability, sit onsite, interface with all parties
+- ✅ **Team composition flexibility:** Explored offshore vs onsite resource mix (feasibility uncertain), typical models: 80/20 onsite-heavy ($200-250/hr), 20/80 offshore-heavy ($100-150/hr), 50/50 hybrid ($150-200/hr)
+- ✅ **Financial structuring:** Differentiate licensing (OpEx) vs implementation services (CapEx-eligible), optimize for P&L impact, split platform build ($2.5M CapEx amortized 5 years) vs training ($700K OpEx Year 1)
+- ✅ **AI initiative workshop:** Week-long program with specialized staff onsite to identify/develop AI use cases, available pre-purchase, $50K-100K cost (often free/discounted in FSL deal), deliverable is prioritized AI roadmap with POC plan
+
 ---
 
 ## Today's Focus: Architecture, Integration, Positioning
