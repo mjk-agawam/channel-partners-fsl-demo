@@ -1,7 +1,7 @@
 
 **Date:** June 24, 2026  
 **Account:** Channel Partners Solutions, LLC  
-**Context:** Architecture session following June 18 OpenSky reverse demo. Focus on gaps, integration points, and Salesforce positioning.
+**Context:** Full-day enterprise architecture workshop (Tampa, FL) with technical deep-dive. 5-hour session covered complete integration landscape, business process workflows, WMS consolidation strategy, go-back root cause analysis, and Salesforce positioning.
 
 ---
 
@@ -33,11 +33,17 @@
 **Business Performance Assessment (Stephen's Exercise):**
 
 ### Marketing: 3/10
+**Jay's Direct Quote (Architecture Workshop):**
+> "I think marketing thing is so it's a loaded question I'll answer in three different parts. One from a lead generation standpoint I think there's a lot more opportunity exists in what we do and uh not been a priority primarily because we get uh um big fish through through peer level connections and whatnot plus we're not um good at scheduling so we always run short of number of bodies we need we have a recruiting challenge... 3 to 5% is what I think."
+
 **Root Causes (Jay's "Loaded Question"):**
 - Lead generation misses due to capacity constraints (large client projects consume all capacity, scheduling inefficiencies prevent scaling)
 - Unbalanced resource ratio (full-time to floating resources not correctly sized)
 - Over-reliance on "part-timers" as generic bucket (no distinction between reliable retained part-timers 15-30 hrs/week vs. true gig workers/floaters 5-10 hrs/week)
 - Lack of cross-training (staff locked into specific tactics, can't optimize availability or flex across LOBs)
+- **Website lead conversion**: ChannelPartners.com collects leads via forms, integrated to HubSpot (repository only, NOT full campaign management)
+- **Google Ads**: SEO campaigns running, but 3-5% revenue contribution only
+- **Small project challenge**: $300K-$2M projects have better margins but require dedicated resource pool (hard to carve out when constrained)
 
 **Impact:**
 - Lost revenue (can't pursue new opportunities despite market demand)
@@ -46,11 +52,19 @@
 - Quality issues (gig workers assigned to complex work without adequate training)
 
 ### Sales/Contracting: 5/10
+**Jay's Direct Quote:**
+> "It's it we doing a great job not because it's process driven because it's a people driven... I would say the output is very manual out of 10 but the risk factor brings the score down."
+
 **Root Causes:**
 - Heavily people-driven process (not systemic)
 - Largely manual (no CRM, no opportunity management, no CPQ)
 - Lacks cohesive "glue" to connect sales → contracting → project setup
 - Every deal is bespoke (contract terms not standardized)
+- **HubSpot usage**: Repository only (leads/accounts/contacts), NO workflow automation, NO segmentation, NO campaign management
+- **Lead tracking**: Spreadsheets until deal matures to client code creation in OpenSky
+- **RFP process**: SharePoint for presentations/documents, AutoRFP tool (AI-driven Q&A based on historical RFP responses)
+- **Relationship-driven**: Most projects come through operations team relationships (NOT sales team)
+- **Contract creation**: Manual via legal team, stored in SharePoint, signed via DocuSign
 
 **Impact:**
 - Long sales cycles (manual proposal generation, custom contract negotiation each time)
@@ -61,12 +75,19 @@
 **Salesforce Opportunity:** Sales Cloud (pipeline management), CPQ (standardized pricing, automated proposals), Contract Lifecycle Management (templates, approval workflows), Slack integration (sales → ops handoff automation)
 
 ### Project Kickoff/Initiation: 5/10
+**Jay's Direct Quote:**
+> "Project pick up is the most painful thing for us. The easy part is what John was saying creating a client code project code that's not a problem. The real problem is keeping getting all the ducks in a row... we don't even have those products anymore. We have to go procure them, provision them. Sometimes we have to go work with a completely brand new partner... I would say we do a mill job in terms of project kickoff."
+
 **Root Causes:**
 - Fragmented system landscape (OpenSky, Project Center WMS, homegrown tools, LearnUpon LMS, Business Central)
 - No single source of truth for project definition
 - Manual data entry across multiple systems
 - Sales agrees to custom client requirements WITHOUT standardized provisioning process
 - Operations scrambles to build custom solution AFTER contract signed
+- **"Have It Your Way" culture**: Sales says "Yes" to everything without standardization filter
+- **Procurement delays**: Custom hardware (iPads, laptops), special parts, client-specific tools
+- **Partner onboarding**: Sometimes must work with brand-new fulfillment partner mid-project
+- **Timeline pressure**: 30-day turnarounds common (insufficient for proper provisioning)
 
 **Example Scenario:**
 1. Sales closes deal with custom requirements (47 custom survey questions + photo workflows + parts ordering)
@@ -85,6 +106,9 @@
 **Salesforce Opportunity:** Project Templates (reusable Work Order templates), Product Catalog + CPQ (standardized service offerings, custom options priced/provisioned automatically), Flow Automation (contract signed → auto-create project → auto-assign resources → auto-trigger training), Configuration Management (custom requirements tracked as metadata, provisioned via clicks not code)
 
 ### Execution/Scheduling: CORE BOTTLENECK (No explicit rating, but identified as critical)
+**Jay's Direct Quote:**
+> "The biggest problem even though my team might agree might not agree actual project execution some of the core components of the execution happens on the spreadsheet... I pulled bunch of reports... we found out that on a on a hourly weekly basis there were thousands and thousands of hours of people sitting idle not necessarily ideal but systems show they're idle... I was told last week that they were in a 10-hour call, four of them doing a scheduling all Saturday, all Sunday."
+
 **Root Causes:**
 
 **1. Managers Don't Trust OpenSky Scheduling:**
@@ -92,6 +116,8 @@
 - Managers revert to manual "spreadsheet magic" instead
 - Assign work based on **personal relationships with field reps** rather than system recommendations
 - Work nights/weekends to manually schedule in spreadsheets
+- **Scheduling stakeholders**: EVPs, VPs, SVPs (should be district managers, but escalated due to complexity)
+- **Time consumption**: 50%+ of manager's week on manual scheduling (10-hour weekend calls documented)
 
 **Why Managers Don't Trust System:**
 - System recommendations don't match reality (suggests unavailable reps)
@@ -275,28 +301,42 @@ If these 5 themes are solved:
 **Cost Impact:**
 - 2x labor, 2x mileage, client dissatisfaction, rep frustration
 
-**4 Primary Root Causes:**
+**John's Direct Quote on Root Causes:**
+> "The number one thing in our goback data shows as um as uh materials either the didn't bring it or it wasn't there on time."
 
-**1. Material Logistics (30-40% of go-backs):**
+**4 Primary Root Causes (Validated from Transcript):**
+
+**1. Material Logistics (30-40% of go-backs) - PRIMARY CAUSE:**
 - Parts don't arrive before scheduled visit (shipping delays, lost/misplaced by retailer, tracking not real-time)
+- **Kari's examples**: "Materials not showing up on time. They're not available. The client um decides to shift the the entire project to another week because the materials haven't been shipped."
+- **Incomplete kits**: Some parts missing from shipment
+- **Retailer misplacement**: Parts delivered but store can't locate them
+- **Wrong parts shipped**: Incorrect SKU/model sent
 - Salesforce Opportunity: Real-time parts tracking, mobile alerts before rep leaves, store notifications, predictive Einstein alerts for delay-prone routes
 
 **2. Scheduling Failures (20-30% of go-backs):**
 - Planning visits too late, parts ordered late, visit scheduled before parts can arrive
+- **Jay's insight**: "You did not know Jay is the one going to go to that shop and you planned that too late in the game and it takes time to send the product either to Jay's house or to the retailer."
 - Salesforce Opportunity: Scheduling constraints (can't schedule until parts delivered), automated alerts (if parts not ordered 7 days before target), project templates with standard timelines
 
 **3. Capacity Planning (10-20% of go-backs):**
 - Rep overbooked across multiple projects, projects get rushed, parts not ready
+- **Manager perspective**: "If you give me double the count of a head like if you double from 7,000 to 14,000 everything will be fine"
 - Salesforce Opportunity: Multi-Work Order visibility, capacity-based scheduling, Einstein resource optimization
 
 **4. Field Protocol (10-20% of go-backs):**
 - Reps rely on system tracking, don't verify parts with store before arrival, parts at store but not found
+- **Current process**: Reps see tracking in mobile app, assume parts ready, but don't call store to confirm
 - Salesforce Opportunity: Pre-arrival checklist, store contact integration (tap to call), photo verification, required "Parts Verified" field before check-in
 
 **Go-Back Reduction ROI (Needs Validation):**
 - Assumptions: 25.9M visits/year, 10% go-back rate = 2.6M go-backs/year, $100 avg cost = $260M/year
 - 50% reduction = 1.3M fewer go-backs = **$130M/year savings**
 - Critical: Validate actual go-back rate, cost per go-back, % by root cause
+
+**Additional Context from Workshop:**
+- **John's clarification**: Go-backs also happen when "store was having some weird, you know, customer appreciation day and they were like, 'You can't do that today. We're busy.'"
+- **Parts shipment destinations**: Can ship to rep's home OR directly to store (depends on project)
 
 ### Survey Workflows and Task Management
 **ANSWERED:**
@@ -305,10 +345,15 @@ If these 5 themes are solved:
 
 ### System Integration Landscape and Modernization Strategy
 **ANSWERED:**
-- ✅ **Systems involved:** OpenSky, Project Center (homegrown WMS), Sphere (third-party WMS), Launch (third-party WMS), Logiwa (mentioned in integration discussion)
+- ✅ **Systems involved:** OpenSky, Project Center (homegrown WMS), Sphere (third-party WMS), Logiwa (third-party WMS)
 - ✅ **Challenge:** Managing multiple homegrown and third-party solutions creates complexity
-- ✅ **Consensus:** Need to replace legacy technology with scalable enterprise WMS
-- ✅ **Strategy:** Implement API gateways to decouple services and ease future system migrations (protect Samsung/LG integrations from underlying system changes)
+- ✅ **Consensus:** Need to consolidate to single enterprise WMS
+- ✅ **Strategy:** Implement API gateway/proxy layer to decouple Samsung/LG integrations from underlying WMS (allows system swaps without forcing clients to rework integrations)
+- ✅ **Samsung integration specifics**: Custom-built direct integration to Project Center homegrown WMS, bidirectional (procurement + fulfillment status), uses REST API services
+- ✅ **Integration risk mitigation (Jay's proposal)**: "Even though we don't use the homegrown WMS the layer on top of it which I call as a loosely API gateway... hijack that make that talk to open sky"
+- ✅ **Sphere capabilities**: Third-party WMS, API-enabled from day one, bidirectional integration with OpenSky
+- ✅ **Logiwa capabilities**: Third-party WMS (noted in discussion)
+- ✅ **Project Center WMS limitation**: Legacy technology, can't scale to enterprise, built for single line of business
 
 ### AI and Automation Initiatives
 **ANSWERED:**
@@ -793,8 +838,9 @@ OPEN SKY PLATFORM
 **Kari: "We create very detailed surveys. When I say detailed, I mean lots of questions, lots of functionality... tons of conditionality."**
 
 - **ANSWERED:**
-  - ✅ **Survey scale:** 600-1,200 questions per survey (potential), though individual visits typically involve fewer
-  - ✅ **Survey structure:** Subdivided into "tasks" for mobile app stability/performance (field reps navigate specific sections like inventory or fixture installation, not a single massive form)
+  - ✅ **Survey scale:** 600-1,200 questions per survey (John: "the largest surveys... some of them can be up to 800-1200 questions depending on like what you're answering in the conditionality")
+  - ✅ **Survey structure:** Subdivided into "tasks" for mobile app stability/performance (John: "rather than just like make sure all the questions are dumped onto like one thing a task can be you know a very simple name and I have like... five questions within it")
+  - ✅ **Grid questions:** Repeat same question set across multiple products/rows (John: "grid question can have... 10 columns... and it could have... you know 10 rows... if I did have it not in a grid I'd have to repeat those 10 questions... 10 times right so it's like 100 questions")
   - ✅ **Question library:** Reusable question bank allowing shared question instances across multiple call forms/projects
   - ✅ **Question types:**
     - Standard: multiple choice, text, photo, signature, date/time
@@ -865,8 +911,10 @@ OPEN SKY PLATFORM
 
 - **ANSWERED:**
   - ✅ **Timeline:** Next 2-3 months (mentioned in June 18 reverse demo)
-  - ✅ **Vision:** Shift from LOB silos to geographic model for "fluid resources" who can work across multiple clients/work types
+  - ✅ **Vision:** Shift from LOB silos to geographic model for "fluid resources" who can work across multiple clients/work types (Jay: "there is some opportunity there and then Mike to your specific question... in the near future")
   - ✅ **Requires changes to:** Incentives, training, systems, reporting hierarchy
+  - ✅ **Challenge:** OpenSky hierarchy model is LOB-based today, would need to be rebuilt to support geographic model
+  - ✅ **Risk assessment:** Major org change + OpenSky rollout happening simultaneously (July 6 go-live during organizational transformation)
 - **Questions:**
   - What's driving the shift from LOB silos to geographic model? (Cost? Efficiency? Client demand? PE mandate?)
   - What's the timeline? (Announced? In planning? Rolling out by region?)
@@ -972,7 +1020,7 @@ OPEN SKY PLATFORM
 - How many third-party contractors managed in Mars? (Dozens? Hundreds? Thousands?)
 - What % of field work is done by contractors vs. W-2 employees?
 - Do contractors use mobile apps to complete work? Or just time tracking?
-- Do contractors complete surveys/call forms like W-2 reps?
+- Do contractors complete surveys/call forms like W-2 reps? (Data gap suggests they do, but manually exported)
 - How is quality controlled for contractor work? (Same QA process as W-2?)
 - What's the invoicing process? (Partner bills CP, CP bills client?)
 - Are contractors ever assigned to same projects as W-2 reps? (Mixed teams?)
@@ -980,6 +1028,7 @@ OPEN SKY PLATFORM
 - If Salesforce replaced OpenSky, would you also replace Mars?
 - Could MuleSoft integrate Mars → Salesforce if Mars stays?
 - Would Experience Cloud guest access work for third-party partner reps?
+- Can contractor assignments leverage automated scheduling in the same way W-2 reps do, or is third-party work always manually assigned?
 
 ---
 

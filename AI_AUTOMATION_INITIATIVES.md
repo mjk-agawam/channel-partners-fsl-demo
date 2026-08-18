@@ -15,10 +15,13 @@ Channel Partners has established an **"Automation Team"** focused on AI-driven p
 
 ### 1. Conversational Chatbot for Internal Knowledge Base
 
+**Jay's Priority Use Case:** "Having a bidirectional AI that you can ask specific questions that can be put in place for your field employees so that they understand and get the answers that they need"
+
 **Purpose:**
 - Bidirectional AI for internal employee queries
-- Self-service knowledge base access
+- Self-service knowledge base access with MCP-style lookup capability
 - Reduce support center call volume
+- Enable real-time answers during field visits
 
 **Use Cases:**
 
@@ -26,6 +29,7 @@ Channel Partners has established an **"Automation Team"** focused on AI-driven p
 - "How do I troubleshoot Samsung display flickering?"
 - "What parts do I need for LG OLED installation?"
 - "Where do I find training video for Microsoft Surface setup?"
+- "What's the process for handling a damaged product during installation?"
 
 **Manager Questions:**
 - "What's the SLA for Target merchandising projects?"
@@ -75,10 +79,16 @@ Channel Partners has established an **"Automation Team"** focused on AI-driven p
 
 ### 2. Automated Quality Control (QC) Using Image Comparison
 
+**Jay's Vision:** "We have reference images of planograms for certain displays... the AI can... compare those two images and... within two degrees of difference or whatever it is, let's call it accurate. And now your call form is accurate. Your rep is not responsible for doing everything anymore. The AI just verified that this was done correctly."
+
 **Purpose:**
 - Verify task completion using AI image analysis
 - Auto-generate exception task lists (incomplete work, quality issues)
 - Reduce manual QA review time
+- Shift verification burden from rep manual entry to AI automated comparison
+- Enable real-time feedback while rep still on-site
+
+**ROI Estimate:** Jay mentioned **$13.2M annual QC cost** could be reduced significantly through AI automation
 
 ---
 
@@ -238,7 +248,16 @@ Channel Partners has established an **"Automation Team"** focused on AI-driven p
 
 ---
 
-## Additional AI Use Cases (Brainstormed in Architecture Session)
+## Additional AI Use Cases (17+ Total Documented)
+
+**Jay:** "That's what we're looking at. So there's about 17 different use cases that we put together for this automation team... the 17 there are more than that now... probably 20 plus at this point."
+
+**Three Core Use Cases Prioritized:**
+1. Conversational chatbot (bidirectional AI with MCP lookup)
+2. Automated QC using image comparison (planogram reference matching)
+3. Lead analysis using sales call transcripts (transcription + quality scoring)
+
+---
 
 ### 3. Lead Analysis Using Sales Call Transcripts
 

@@ -38,13 +38,14 @@
 
 ### 2. Reverse Demo 2.0 with KPI Definition
 
-**Timing:** Wednesday (specific date TBD)
+**Timing:** Next Wednesday (specific date TBD, noted as "a week from the workshop")
 
 **Purpose:**
 - Channel Partners demonstrates current workflows to Salesforce
 - Salesforce sees OpenSky, Project Center, manager spreadsheets in action
 - **PRIMARY FOCUS:** Isolate and define specific KPIs that will serve as project "North Star"
 - Better understanding of pain points → More accurate FSL demo scenarios
+- Kari (quoting Jay): "That could be really great for us to you know actually really hone in on not getting distracted by shiny things"
 
 **KPI Definition Priority:**
 > "The team shifted focus to preparing for the second reverse demo, prioritizing the isolation of specific KPIs. They agreed that defining these metrics is critical to preventing scope creep and establishing a shared 'North Star' for the project's success."
@@ -185,6 +186,8 @@
 
 **Purpose:**
 > "Stephen emphasized the importance of immediately beginning to capture high-quality data and images to establish a historical baseline that will be critical for training and deploying future AI models."
+
+**Stephen's Guidance:** "The last thing I'll say is like you want to start capturing good data today... historical data, and so if you've been capturing everything that's awesome, but if you can continue capturing things... images, like stuff that you know is good... you want to start to have a history of that. So that when you're ready to build a model or whatever, you're not like we started, we're collecting all the data right now, and in six months or a year we'll see what we can do with it. But I would say like start that right away and keep that going."
 
 **Actions Starting This Week:**
 
@@ -329,6 +332,10 @@
 > "The team plans to work backward from a proposed mid-next year 'go-live' date to create a realistic implementation schedule, with follow-ups scheduled via email and existing project trackers."
 
 **Target Go-Live:** Mid-2027 (18 months from now, full rollout complete)
+
+**Kari's Perspective on Timeline:** When Stephen asked about go-live timing, Kari said: "I feel like you have to put a number down because that helps everybody better map out, but I mean we've been talking about a lot of different timelines. We've talked two years, we've talked three years, so I mean putting down a year and a half would be pretty, that'd be pretty awesome to get there."
+
+**Stephen's Realism Check:** "Yeah and so a year and a half is going to be aggressive right, I mean this is... 20 months, 21 months actually gives you a little bit of wiggle room before you hit two years."
 
 **Work Backward Timeline:**
 

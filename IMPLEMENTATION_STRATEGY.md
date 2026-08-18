@@ -31,6 +31,8 @@
 - Learn from each team's experience, refine before next team
 - Maintain stability for rest of organization while pilot team tests new system
 
+**Kari's Validation:** When discussing rollout approach, Kari confirmed: "That's what we've done in the past... rolling out functionality one team at a time, adding features as we go"
+
 **Example: OpenSky Rollout (Likely Approach for July 6):**
 1. **Pilot team:** Single LOB (merchandising? audits?), single geography (California?), 50-100 reps
 2. **Month 1:** Core functionality only (schedule, time tracking, basic surveys)
@@ -202,6 +204,8 @@
 
 **Quote (paraphrased):**
 > "Stephen proposed a 'CTO role' as an oversight position to bridge the gap between the company, Salesforce, and the implementation partner. This individual would sit onsite, interface with Salesforce, and ensure the partner team remains accountable and efficient."
+
+**Stephen's Rationale:** "I typically recommend having a CTO or somebody in a CTO role that sits on site like they literally live at your location and they interface with Salesforce and they interface with the partner. And so what ends up happening is you're, it's, it ends up being a lot of responsibility so if you don't do that well then there's a lot of finger pointing between Salesforce and the partner and you guys are kind of in the middle. So that's why I typically recommend that to just make the process more efficient and to make sure that the partner team stays accountable and does what they're supposed to do."
 
 **Role Definition:**
 - **Title:** Implementation Program Director (or "Embedded CTO")

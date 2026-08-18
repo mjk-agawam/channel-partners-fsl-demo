@@ -61,6 +61,8 @@
    - Clicks link → Opens call form in browser (no login required)
    - Completes survey questions, uploads photos
    - Submits form
+   
+**John's Explanation:** "They use essentially the call form where they it's like a link on a phone to a website that they fill out and then they fill it out... once they fill it out that information then sends to us and then we create invoices for them"
 
 3. **Data flow:**
    - Completed call form data stored in Project Center

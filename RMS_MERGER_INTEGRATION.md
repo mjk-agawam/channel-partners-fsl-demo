@@ -18,10 +18,15 @@
 - Dedicated retail relationship (likely Target, Best Buy, or similar major chain)
 - Minnesota-based operations
 
+**Scale:**
+- **1,500 employees** (substantial workforce addition to Channel Partners)
+- Jay mentioned this when discussing integration complexity
+
 **Current State:**
 - Uses homegrown system called "Portal" for workforce management
 - Payroll migrated to Channel Partners' ADP instance
 - Operational workflows still separate from OpenSky
+- **Timeline for full OpenSky migration:** Delayed 12+ months due to operational complexity
 
 ---
 
